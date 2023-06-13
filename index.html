@@ -1,0 +1,4025 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha384-...SNIPPED...8B" crossorigin="anonymous">
+
+
+</head>
+<style>
+  @media (min-width: 930px) {
+    .cricket-page-main-container {
+      background-color: #111;
+      height: cover;
+      padding-bottom: 20px;
+      width: 100%;
+      background-size: cover;
+    }
+
+    .header-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .header-bg-container {
+      background-color: #111;
+      height: 50px;
+      width: 100%;
+      margin-top: 40px;
+      justify-self: center;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+    }
+
+    .live-score-element {
+      font-size: 30px;
+      font-weight: 900;
+      color: white;
+      font-style: oblique;
+    }
+
+
+    .sports-element {
+      font-size: 20px;
+      margin-top: 10px;
+      font-style: oblique;
+      color: #aaa;
+      font-weight: 600;
+      font-size: 19px;
+    }
+
+    .sports-container {
+      flex-wrap: wrap;
+      width: 100%;
+      padding-right: 20px;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .football-element {
+      border-radius: 15px;
+      text-decoration: none;
+    }
+
+
+    input:focus {
+      outline: none;
+    }
+
+    .football-element {
+      width: max-content;
+      margin: auto;
+      border-radius: 15px;
+      text-decoration: none;
+    }
+
+    .football-ele {
+      color: #aaa;
+      padding: 10px;
+      font-family: sans-serif;
+      font-weight: 600;
+      font-style: oblique;
+      margin-top: -0.5rem;
+    }
+
+    :hover.football-ele {
+      background-color: white;
+      padding: 10px;
+      font-family: sans-serif;
+      font-weight: 600;
+      font-style: oblique;
+      color: black;
+      border-radius: 2.5rem;
+    }
+
+    .scores-matches-bg-container {
+      display: flex;
+      /* flex-direction: row-reverse; */
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .countrys-search-container {
+      height: 300px;
+      width: 300px;
+      border-style: solid;
+      border-color: grey;
+      /* margin-left: 50px; */
+      border-radius: 8px;
+      overflow: auto;
+      margin-top: 3rem;
+    }
+
+    .calender {
+      height: cover;
+      width: 300px;
+      border-style: solid;
+      border-color: grey;
+      /* margin-left: 50px; */
+      border-radius: 8px;
+      overflow: auto;
+    }
+
+    .calender {
+      height: cover;
+      width: 300px;
+      border-style: solid;
+      border-color: grey;
+      /* margin-left: 50px; */
+      border-radius: 8px;
+      overflow: auto;
+    }
+  }
+
+  .counties-display-container {
+    background-color: aliceblue;
+    margin: 10px;
+    color: black;
+    padding: 10px;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border-bottom: 1px solid grey;
+    float: left;
+    color: white;
+    width: 90%;
+    background: none;
+  }
+
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: none;
+    color: #aaa;
+    font-size: 17px;
+    border-bottom: 1px solid grey;
+    border-left: none;
+    /* Prevent double borders */
+    cursor: pointer;
+  }
+
+
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .sports-details-main-container {
+    height: 600px;
+    width: 430px;
+    border-style: solid;
+    border-color: grey;
+    margin-left: 5rem;
+    border-radius: 8px;
+    overflow: auto;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .days-container {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .live-anchor-tag {
+    background-color: white;
+
+    color: black;
+    font-size: 16px;
+    height: 80px;
+    width: 90px;
+    margin: auto;
+    font-family: initial;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    padding-inline: 1rem;
+    margin-left: -2rem;
+  }
+
+  .label-day-elements {
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .date-elements {
+    font-size: 10px;
+    color: #aaa;
+    font-style: italic;
+  }
+
+  .score-details-container {
+    padding: 8px;
+    background-color: #181818;
+    height: cover;
+    width: 96%;
+    font-size: 12px;
+    border-radius: 8px;
+    margin: 2%;
+  }
+
+
+
+
+
+
+
+  @media (max-width:930px) {
+    .cricket-page-main-container {
+      background-color: #111;
+      height: cover;
+      width: 100%;
+      padding-bottom: 20px;
+      background-size: cover;
+    }
+
+    .header-container {
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .header-bg-container {
+      height: 50px;
+      min-width: 300px;
+      max-width: 900px;
+      margin-top: 40px;
+      justify-self: center;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+    }
+
+    .live-score-element {
+      font-size: 30px;
+      font-weight: 900;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      font-style: italic;
+    }
+
+
+    .sports-element {
+      display: none;
+    }
+
+    .sports-container {
+      width: 100%;
+      padding-right: 20px;
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .football-element {
+      border-radius: 15px;
+      text-decoration: none;
+    }
+
+    .football-ele {
+      color: white;
+      padding: 10px;
+      font-family: sans-serif;
+      font-size: 14px;
+      font-style: oblique;
+    }
+
+    .scores-matches-bg-container {
+      display: flex;
+      /* flex-direction: row-reverse; */
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .calenderstyle{
+      display: none;
+    }
+
+    .countrys-search-container {
+      display: none;
+    }
+
+    .sports-details-main-container {
+      height: 600px;
+      width: 400px;
+      border-style: solid;
+      border-color: grey;
+      margin: 20px;
+      border-radius: 8px;
+      overflow: auto;
+      margin: auto;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .days-container {
+      margin: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .live-anchor-tag {
+      color: white;
+      font-size: 18px;
+      margin-top: 40px;
+      font-family: "Roboto";
+      font-weight: 600;
+    }
+
+    .label-day-elements {
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    .date-elements {
+      font-size: 10px;
+      color: white;
+      font-style: italic;
+    }
+
+    .score-details-container {
+      padding: 8px;
+      background-color: #181818;
+      height: cover;
+      width: 96%;
+      font-size: 12px;
+      border-radius: 8px;
+      margin: 2%;
+    }
+  }
+
+
+
+  @media (width:768px) {
+    .cricket-page-main-container {
+      background-color: #111;
+      height: cover;
+      width: 100%;
+      padding-bottom: 20px;
+      background-size: cover;
+    }
+
+    .header-container {
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .header-bg-container {
+      height: 50px;
+      min-width: 300px;
+      max-width: 900px;
+      margin-top: 40px;
+      justify-self: center;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+    }
+
+    .live-score-element {
+      font-size: 30px;
+      font-weight: 900;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      font-style: italic;
+    }
+
+
+    .sports-element {
+      display: none;
+    }
+
+    .sports-container {
+      flex-wrap: wrap;
+      width: 100%;
+      padding-right: 20px;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .football-element {
+      border-radius: 15px;
+      text-decoration: none;
+    }
+
+
+    .football-ele {
+      color: white;
+      padding: 10px;
+      font-family: sans-serif;
+      font-size: 14px;
+      font-style: oblique;
+    }
+
+    .scores-matches-bg-container {
+      display: flex;
+      flex-direction: row;
+      margin-top: 30px;
+    }
+    .calenderstyle{
+      display: none;
+    }
+
+    .countrys-search-container {
+      display: none;
+    }
+
+    .sports-details-main-container {
+      height: 600px;
+      width: 430px;
+      border-style: solid;
+      border-color: grey;
+      margin: 20px;
+      border-radius: 8px;
+      overflow: auto;
+      margin: auto;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    .days-container {
+      margin: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .live-anchor-tag {
+      color: white;
+      font-size: 20px;
+      margin-top: 40px;
+      font-family: "Roboto";
+      font-weight: 600;
+    }
+
+    .label-day-elements {
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    .date-elements {
+      font-size: 10px;
+      color: white;
+      font-style: italic;
+    }
+
+    .score-details-container {
+      padding: 8px;
+      background-color: #181818;
+      height: cover;
+      width: 96%;
+      font-size: 14px;
+      border-radius: 8px;
+      margin: 2%;
+    }
+  }
+
+
+
+
+
+  @media (max-width:300px) {
+    .cricket-page-main-container {
+      background-color: #111;
+      height: cover;
+      width: 100%;
+      padding-bottom: 20px;
+      background-size: cover;
+    }
+
+    .header-container {
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .header-bg-container {
+      height: 30px;
+      width: 10px;
+      margin-top: 40px;
+      margin-right: 60px;
+      margin: auto;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+    }
+
+    .live-score-element {
+      font-size: 30px;
+      font-weight: 900;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      font-style: italic;
+    }
+
+
+    .sports-element {
+      display: none;
+    }
+
+    .sports-container {
+      flex-wrap: wrap;
+      width: 100%;
+      padding-right: 20px;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .football-element {
+      border-radius: 15px;
+      text-decoration: none;
+    }
+
+
+
+
+    .football-ele {
+      color: white;
+      padding: 10px;
+      font-family: sans-serif;
+      font-size: 10px;
+      font-style: oblique;
+    }
+
+    .scores-matches-bg-container {
+      display: flex;
+      /* flex-direction: row-reverse; */
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .calenderstyle{
+      display: none;
+    }
+
+    .countrys-search-container {
+      display: none;
+    }
+
+    .sports-details-main-container {
+      height: 600px;
+      width: 430px;
+      border-style: solid;
+      border-color: grey;
+      margin: 20px;
+      border-radius: 8px;
+      overflow: auto;
+      margin: auto;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    .days-container {
+      margin: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .live-anchor-tag {
+      color: white;
+      font-size: 20px;
+      margin-top: 40px;
+      font-family: "Roboto";
+      font-weight: 600;
+    }
+
+    .label-day-elements {
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    .date-elements {
+      font-size: 10px;
+      color: white;
+      font-style: italic;
+    }
+
+    .score-details-container {
+      padding: 8px;
+      background-color: #181818;
+      height: cover;
+      width: 96%;
+      font-size: 14px;
+      border-radius: 8px;
+      margin: 2%;
+    }
+  }
+
+  .team_summary {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: italic;
+    margin-left: 17rem;
+    margin-top: 2rem;
+    height: 30px;
+  }
+
+  .team_squad {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    font-style: italic;
+    margin-left: 5rem;
+    margin-top: 2rem;
+    height: 30px;
+  }
+
+  .team_members {
+    color: #aaa;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: italic;
+    margin-left: 6rem;
+    margin-top: 0rem;
+    height: 30px;
+  }
+
+  .team1 {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: italic;
+    margin-left: 8rem;
+    margin-top: 2rem;
+    height: 30px;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #181818;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .highlight {
+    background-color: burlywood;
+    /* Add any other styling you want to apply to the highlighted date */
+  }
+
+  .box {
+    width: 100%;
+    height: 30px;
+    /* border: 1px solid #999; */
+    font-size: 18px;
+    color: #fff;
+    background-color: #111;
+    margin: 10px;
+    /* border-radius: 5px; */
+    border: none;
+    /* box-shadow: 4px 4px #ccc; */
+  }
+</style>
+
+<body>
+  <div id="liveScoreAndRecentMainPage">
+    <div class="cricket-page-main-container">
+
+      <div>
+        <div class="header-container">
+          <div class="header-bg-container">
+
+            <div>
+              <a class="live-score-element">Cricket Live Score</a>
+            </div>
+
+          </div>
+        </div>
+        <hr>
+        </hr>
+
+        <ul class="sports-container">
+          
+          <div class="football-element">
+            <a href="https://bharatsports.net/cricket-live-score/">
+            <p class="football-ele">Cricket</p>
+          </a>
+          </div>
+
+          <div class="football-element">
+            <a href="https://bharatsports.net/football-live-score/">
+              <p class="football-ele">Football</p>
+            </a>
+
+          </div>
+
+          <div class="football-element">
+            <a href="https://bharatsports.net/hockey-live-score/">
+              <p class="football-ele">Hockey</p>
+            </a>
+          </div>
+
+
+          <div class="football-element">
+            <a href="https://bharatsports.net/basketball-live-score/">
+              <p class="football-ele">Basketball</p>
+            </a>
+          </div>
+
+
+          <div class="football-element">
+            <a href="https://bharatsports.net/tennis-live-score/">
+              <p class="football-ele">Tennis</p>
+            </a>
+          </div>
+
+
+
+          <div class="football-element">
+            <a href="https://bharatsports.net/badminton-live-score/">
+              <p class="football-ele">Badminton</p>
+            </a>
+          </div>
+
+
+          <div class="football-element">
+            <a href="https://bharatsports.net/table-tennis-live-score/">
+              <p class="football-ele">Tabletennis</p>
+            </a>
+          </div>
+
+          <div class="football-element">
+            <a href="snooker.html">
+              <p class="football-ele">Snooker</p>
+            </a>
+          </div>
+
+
+          <div class="football-element">
+            <a href="https://bharatsports.net/volleyball-live-score/">
+              <p class="football-ele">VolleyBall</p>
+            </a>
+          </div>
+
+        </ul>
+
+        <div class="scores-matches-bg-container">
+          <div class="calenderstyle">
+            <div id="calendar" style="color:white;"></div>
+
+            <div class="countrys-search-container ">
+              <div style="margin: 2rem; margin-left: 6rem;">
+                <form id="searchForm">
+                  <input type="text" id="searchInput" placeholder="Search...">
+                </form>
+                <div id="searchResults"></div>
+                <div id="countriesShow" style="margin-top: 2rem; color: white;">
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <div class="sports-details-main-container no-scrollbar">
+            <div class="days-container">
+              <div>
+                <a class="live-anchor-tag" style="color: black;">Live</a>
+              </div>
+
+            </div>
+            <hr />
+
+            <div id="calenderCompletedMatches">
+            </div>
+
+            <div id="cricketBgMainContainer">
+            </div>
+            <div id="nextDayMatchesConatiner">
+              <div id="ScoreDetailsContainer">
+              </div>
+            </div>
+            <div id="nextMatchCardsContainer">
+              <div id="cards">
+              </div>
+            </div>
+            <div id="filteredMatches">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+</body>
+<script>
+
+
+
+  let cricketBgMainContainerEle = document.getElementById("cricketBgMainContainer");
+  let ScoreDetailsContainerEle = document.getElementById("ScoreDetailsContainer");
+  let ClanderEle = document.getElementById("Claender");
+  let cardEle = document.getElementById("cards");
+  let searchInputEl = document.getElementById("searchInput");
+
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '30aea2d0b9msh5bee8ccbc9d9d14p183fccjsn1e4968e640de',
+      'X-RapidAPI-Host': 'os-sports-perform.p.rapidapi.com'
+    }
+  };
+
+
+
+
+
+  // function searchWiki(event) {
+  //   console.log(event.key)
+
+  // }
+
+
+  // searchInputEl.addEventListener("keydown", searchWiki);
+
+  let arrayOfSpecificeTounamentList = [];
+
+
+
+  function FineshedMatchesFunc(matchId) {
+
+    const urleventData = `https://os-sports-perform.p.rapidapi.com/v1/events/innings?event_id=${matchId}`;
+    fetch(urleventData, options)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (jsonData) {
+
+        let scoreDetailsCardContainerEle = document.createElement("div");
+        ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+
+
+        let divEleForTeamScore = document.createElement("div");
+        divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+        divEleForTeamScore.style.height = "100px";
+        divEleForTeamScore.style.width = "93.5%";
+        divEleForTeamScore.style.margin = "3%";
+        divEleForTeamScore.style.padding = "5px";
+        divEleForTeamScore.style.borderRadius = "8px";
+        scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+        let divEleAlignEle = document.createElement("div");
+        divEleAlignEle.style.display = "flex";
+        divEleAlignEle.style.flexDirection = "row";
+        divEleAlignEle.style.justifyContent = "space-between";
+        divEleAlignEle.style.color = "white";
+        divEleForTeamScore.appendChild(divEleAlignEle);
+
+        let AwayTeamNameEle = document.createElement("p");
+        AwayTeamNameEle.textContent = jsonData.data[0].battingTeam.name;
+        divEleAlignEle.appendChild(AwayTeamNameEle);
+
+        let AwayTeamScorEle = document.createElement("p");
+        AwayTeamScorEle.textContent = jsonData.data[0].score + "/" + jsonData.data[0].wickets + "  " + jsonData.data[0].overs;
+        divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+        let divEleAlignEle2 = document.createElement("div");
+        divEleAlignEle2.style.display = "flex";
+        divEleAlignEle2.style.flexDirection = "row";
+        divEleAlignEle2.style.color = "white";
+        divEleAlignEle2.style.justifyContent = "space-between";
+        divEleForTeamScore.appendChild(divEleAlignEle2);
+
+        let HomeTeamNameEle = document.createElement("p");
+        HomeTeamNameEle.textContent = jsonData.data[0].bowlingTeam.name;
+        divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+        let HomeTeamScorEle = document.createElement("p");
+        HomeTeamScorEle.textContent = jsonData.data[1].score + "/" + jsonData.data[1].wickets + "  " + jsonData.data[1].overs;
+        divEleAlignEle2.appendChild(HomeTeamScorEle);
+
+
+        let BattingEle = document.createElement("p");
+        BattingEle.textContent = "Batting Team";
+        BattingEle.style.color = "white";
+        BattingEle.style.textAlign = "center";
+        scoreDetailsCardContainerEle.appendChild(BattingEle);
+
+
+
+        let tableDivContainer = document.createElement("table");
+        tableDivContainer.style.width = "100%";
+        scoreDetailsCardContainerEle.appendChild(tableDivContainer);
+
+        let tableHead = document.createElement("thead");
+        tableDivContainer.appendChild(tableHead)
+
+        let trEle1 = document.createElement("tr");
+        trEle1.style.color = "white";
+        tableHead.appendChild(trEle1);
+
+        let thEle1 = document.createElement("th");
+        thEle1.textContent = "Batters";
+        trEle1.appendChild(thEle1);
+
+        let thEle2 = document.createElement("th");
+        thEle2.textContent = "R";
+        trEle1.appendChild(thEle2);
+
+        let thEle3 = document.createElement("th");
+        thEle3.textContent = "B";
+        trEle1.appendChild(thEle3);
+
+        let thEle4 = document.createElement("th");
+        thEle4.textContent = "4s";
+        trEle1.appendChild(thEle4);
+
+        let thEle5 = document.createElement("th");
+        thEle5.textContent = "6s";
+        trEle1.appendChild(thEle5);
+
+
+
+        let batsMensTbody = document.createElement("tbody");
+        tableDivContainer.appendChild(batsMensTbody);
+
+
+
+        let teamBowlerContainer = document.createElement("div")
+        teamBowlerContainer.style.marginTop = "40px";
+        teamBowlerContainer.classList.add("team_summary")
+        scoreDetailsCardContainerEle.appendChild(teamBowlerContainer)
+
+        let bowlerLabelEle = document.createElement("label");
+        bowlerLabelEle.textContent = "Bowling Team";
+        bowlerLabelEle.style.textAlign = "center";
+        bowlerLabelEle.style.color = "white";
+        scoreDetailsCardContainerEle.appendChild(bowlerLabelEle);
+
+
+        let BowlertableDivContainer = document.createElement("table");
+        BowlertableDivContainer.style.width = "100%";
+        scoreDetailsCardContainerEle.appendChild(BowlertableDivContainer);
+
+        let bowlerTableHead = document.createElement("thead")
+        BowlertableDivContainer.appendChild(bowlerTableHead)
+
+
+        let bowlerTableBody = document.createElement("tbody")
+        BowlertableDivContainer.appendChild(bowlerTableBody)
+
+
+
+        let BowlertrEle1 = document.createElement("tr");
+        BowlertrEle1.style.color = "white";
+        bowlerTableHead.appendChild(BowlertrEle1);
+
+        let BowlerthEle1 = document.createElement("th");
+        BowlerthEle1.textContent = "Bowlers";
+        BowlertrEle1.appendChild(BowlerthEle1);
+
+        let BowlerthEle2 = document.createElement("th");
+        BowlerthEle2.textContent = "O";
+        BowlertrEle1.appendChild(BowlerthEle2);
+
+        let BowlerthEle3 = document.createElement("th");
+        BowlerthEle3.textContent = "M";
+        BowlertrEle1.appendChild(BowlerthEle3);
+
+        let BowlerthEle4 = document.createElement("th");
+        BowlerthEle4.textContent = "R";
+        BowlertrEle1.appendChild(BowlerthEle4);
+
+        let BowlerthEle5 = document.createElement("th");
+        BowlerthEle5.textContent = "W";
+        BowlertrEle1.appendChild(BowlerthEle5);
+
+
+
+
+        let battingTeamArray = jsonData.data[1].battingLine;
+
+
+        for (let j of battingTeamArray) {
+          if (j.wicketTypeName !== "Did not bat") {
+
+            let trEle2 = document.createElement("tr");
+            trEle2.style.color = "white"
+            batsMensTbody.appendChild(trEle2)
+
+
+            let tdBatsmenName1 = document.createElement("td")
+            tdBatsmenName1.textContent = j.playerName + "*";
+            trEle2.appendChild(tdBatsmenName1)
+
+            let tdBatsmenRuns1 = document.createElement("td")
+            tdBatsmenRuns1.textContent = j.score;
+            trEle2.appendChild(tdBatsmenRuns1);
+
+
+            let tdBatsmenBalls1 = document.createElement("td")
+            tdBatsmenBalls1.textContent = j.balls;
+            trEle2.appendChild(tdBatsmenBalls1);
+
+
+            let tdBatsmenFours1 = document.createElement("td")
+            tdBatsmenFours1.textContent = j.s4;
+            trEle2.appendChild(tdBatsmenFours1);
+
+
+            let tdBatsmenSixes1 = document.createElement("td")
+            tdBatsmenSixes1.textContent = j.s6;
+            trEle2.appendChild(tdBatsmenSixes1);
+
+          }
+
+
+        }
+
+        let bowingTeamArray = jsonData.data[1].bowlingLine;
+
+        for (let k of bowingTeamArray) {
+
+          let bowlertrEle2 = document.createElement("tr");
+          bowlertrEle2.style.color = "white";
+          bowlerTableBody.appendChild(bowlertrEle2);
+
+          let bowlerName1 = document.createElement("td");
+          bowlerName1.textContent = k.player.name;
+          bowlertrEle2.appendChild(bowlerName1);
+
+          let bowlerOneOvers = document.createElement("td");
+          bowlerOneOvers.textContent = k.over;
+          bowlertrEle2.appendChild(bowlerOneOvers);
+
+
+          let bowlerOneMedianOvers = document.createElement("td");
+          bowlerOneMedianOvers.textContent = k.maiden;
+          bowlertrEle2.appendChild(bowlerOneMedianOvers);
+
+          let bowlerOneRuns = document.createElement("td");
+          bowlerOneRuns.textContent = k.run;
+          bowlertrEle2.appendChild(bowlerOneRuns);
+
+          let bowlerOneWickets = document.createElement("td");
+          bowlerOneWickets.textContent = k.wicket;
+          bowlertrEle2.appendChild(bowlerOneWickets);
+
+        }
+
+      })
+
+
+
+
+  }
+
+
+
+  function noteStartedMatches(matchIdEventData) {
+
+    const urleventData = `https://os-sports-perform.p.rapidapi.com/v1/events/data?event_id=${matchIdEventData}`;
+    fetch(urleventData, options)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+
+
+
+        let scoreDetailsCardContainerEle = document.createElement("div");
+        ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+
+        let divEleForTeamScore = document.createElement("div");
+        divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+        divEleForTeamScore.style.height = "120px";
+        divEleForTeamScore.style.width = "93.5%";
+        divEleForTeamScore.style.margin = "3%";
+        divEleForTeamScore.style.padding = "5px";
+        divEleForTeamScore.style.color = "white";
+        divEleForTeamScore.style.fontSize = "14px";
+        divEleForTeamScore.style.borderRadius = "8px";
+        scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+        let divEleAlignEle = document.createElement("div");
+        divEleAlignEle.style.display = "flex";
+        divEleAlignEle.style.flexDirection = "row";
+        divEleAlignEle.style.justifyContent = "space-between";
+        divEleForTeamScore.appendChild(divEleAlignEle);
+
+        let AwayTeamNameEle = document.createElement("p");
+        AwayTeamNameEle.textContent = data.data.awayTeam.name;
+        divEleAlignEle.appendChild(AwayTeamNameEle);
+
+        let AwayTeamScorEle = document.createElement("p");
+        AwayTeamScorEle.textContent = (Object.entries(data.data.awayScore)).length === 3 ? data.data.awayScore.innings.inning1.score + "/" + data.data.awayScore.innings.inning1.wickets + "  " + "(" + data.data.awayScore.innings.inning1.overs + ")" : "";
+        divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+        let divEleAlignEle2 = document.createElement("div");
+        divEleAlignEle2.style.display = "flex";
+        divEleAlignEle2.style.flexDirection = "row";
+        divEleAlignEle2.style.justifyContent = "space-between";
+        divEleForTeamScore.appendChild(divEleAlignEle2);
+
+        let HomeTeamNameEle = document.createElement("p");
+        HomeTeamNameEle.textContent = data.data.homeTeam.name;
+        divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+        let HomeTeamScorEle = document.createElement("p");
+        HomeTeamScorEle.textContent = (Object.entries(data.data.homeScore)).length === 3 ? data.data.homeScore.innings.inning1.score + "/" + data.data.homeScore.innings.inning1.wickets + "  " + "(" + data.data.homeScore.innings.inning1.overs + ")" : "";
+        divEleAlignEle2.appendChild(HomeTeamScorEle);
+
+        let winnerEle = document.createElement("p");
+        winnerEle.textContent = data.data.note;
+        divEleForTeamScore.appendChild(winnerEle);
+
+        let divcardContainerForSummary = document.createElement("div");
+        divcardContainerForSummary.style.backgroundColor = "rgb(24,24,24)";
+        divcardContainerForSummary.style.height = "150px";
+        divcardContainerForSummary.style.width = "93.5%";
+        divcardContainerForSummary.style.margin = "3%";
+        divcardContainerForSummary.style.padding = "5px";
+        divcardContainerForSummary.style.color = "white";
+        divcardContainerForSummary.style.fontSize = "14px";
+        divcardContainerForSummary.style.borderRadius = "8px";
+        scoreDetailsCardContainerEle.appendChild(divcardContainerForSummary);
+
+
+        let tossWinEle = document.createElement("p");
+        tossWinEle.textContent = "toss win By  : " + data.data.tossWin === undefined ? "" : data.data.tossWin;
+        divcardContainerForSummary.appendChild(tossWinEle);
+
+        let venueEle = document.createElement("p");
+        venueEle.textContent = "City : " + data.data.venue.city.name + "," + data.data.venue.country.name;
+        divcardContainerForSummary.appendChild(venueEle);
+
+        let stadium = document.createElement("p");
+        stadium.textContent = "Stadium : " + data.data.venue.stadium.name;
+        divcardContainerForSummary.appendChild(stadium);
+
+
+        let playerOftheMatchInnings = document.createElement("p");
+        playerOftheMatchInnings.textContent = "Man of the Match  : " + data.data.manOfMatch.name;
+        divcardContainerForSummary.appendChild(playerOftheMatchInnings);
+
+
+
+
+
+      })
+
+  }
+
+
+
+  function ScoreDetailsShowing(jsonData) {
+
+    // console.log(jsonData)
+
+    if ((jsonData.data).length === 1) {
+
+      let scoreDetailsCardContainerEle = document.createElement("div");
+      ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+
+
+
+
+      let divEleForTeamScore = document.createElement("div");
+      divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+      divEleForTeamScore.style.height = "100px";
+      divEleForTeamScore.style.width = "93.5%";
+      divEleForTeamScore.style.margin = "3%";
+      divEleForTeamScore.style.padding = "5px";
+      divEleForTeamScore.style.borderRadius = "8px";
+      scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+      let divEleAlignEle = document.createElement("div");
+      divEleAlignEle.style.display = "flex";
+      divEleAlignEle.style.flexDirection = "row";
+      divEleAlignEle.style.justifyContent = "space-between";
+
+      divEleForTeamScore.appendChild(divEleAlignEle);
+
+      let AwayTeamNameEle = document.createElement("p");
+      AwayTeamNameEle.style.color = "white";
+      AwayTeamNameEle.textContent = jsonData.data[0].battingTeam.name;
+      divEleAlignEle.appendChild(AwayTeamNameEle);
+
+      let AwayTeamScorEle = document.createElement("p");
+      AwayTeamScorEle.style.color = "white";
+      AwayTeamScorEle.textContent = jsonData.data[0].score + "/" + jsonData.data[0].wickets + "  " + jsonData.data[0].overs;
+      divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+      let divEleAlignEle2 = document.createElement("div");
+      divEleAlignEle2.style.display = "flex";
+      divEleAlignEle2.style.flexDirection = "row";
+      divEleAlignEle2.style.justifyContent = "space-between";
+      divEleAlignEle2.style.color = "white";
+      divEleForTeamScore.appendChild(divEleAlignEle2);
+
+      let HomeTeamNameEle = document.createElement("p");
+      HomeTeamNameEle.style.color = "white";
+      HomeTeamNameEle.textContent = jsonData.data[0].bowlingTeam.name;
+      divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+
+      let BattingEle = document.createElement("p");
+      BattingEle.textContent = "Batting Team";
+      BattingEle.style.color = "white";
+      BattingEle.style.textAlign = "center";
+      scoreDetailsCardContainerEle.appendChild(BattingEle);
+
+
+      let tableDivContainer = document.createElement("table");
+      tableDivContainer.style.width = "100%";
+      scoreDetailsCardContainerEle.appendChild(tableDivContainer);
+
+      let tableHead = document.createElement("thead");
+      tableDivContainer.appendChild(tableHead)
+
+      let trEle1 = document.createElement("tr");
+      trEle1.style.color = "white";
+      tableHead.appendChild(trEle1);
+
+      let thEle1 = document.createElement("th");
+      thEle1.textContent = "Batters";
+      trEle1.appendChild(thEle1);
+
+      let thEle2 = document.createElement("th");
+      thEle2.textContent = "R";
+      trEle1.appendChild(thEle2);
+
+      let thEle3 = document.createElement("th");
+      thEle3.textContent = "B";
+      trEle1.appendChild(thEle3);
+
+      let thEle4 = document.createElement("th");
+      thEle4.textContent = "4s";
+      trEle1.appendChild(thEle4);
+
+      let thEle5 = document.createElement("th");
+      thEle5.textContent = "6s";
+      trEle1.appendChild(thEle5);
+
+
+      let batsMensTbody = document.createElement("tbody");
+      tableDivContainer.appendChild(batsMensTbody);
+
+
+
+      let teamBowlerContainer = document.createElement("div")
+      teamBowlerContainer.style.marginTop = "40px";
+      teamBowlerContainer.classList.add("team_summary")
+      scoreDetailsCardContainerEle.appendChild(teamBowlerContainer)
+
+      let bowlerLabelEle = document.createElement("label");
+      bowlerLabelEle.textContent = "Bowling Team";
+      bowlerLabelEle.style.textAlign = "center";
+      bowlerLabelEle.style.color = "white";
+      scoreDetailsCardContainerEle.appendChild(bowlerLabelEle);
+
+
+      let BowlertableDivContainer = document.createElement("table");
+      BowlertableDivContainer.style.width = "100%";
+      scoreDetailsCardContainerEle.appendChild(BowlertableDivContainer);
+
+      let bowlerTableHead = document.createElement("thead")
+      BowlertableDivContainer.appendChild(bowlerTableHead)
+
+
+      let bowlerTableBody = document.createElement("tbody")
+      BowlertableDivContainer.appendChild(bowlerTableBody)
+
+
+
+      let BowlertrEle1 = document.createElement("tr");
+      BowlertrEle1.style.color = "white";
+      bowlerTableHead.appendChild(BowlertrEle1);
+
+      let BowlerthEle1 = document.createElement("th");
+      BowlerthEle1.textContent = "Bowlers";
+      BowlertrEle1.appendChild(BowlerthEle1);
+
+      let BowlerthEle2 = document.createElement("th");
+      BowlerthEle2.textContent = "O";
+      BowlertrEle1.appendChild(BowlerthEle2);
+
+      let BowlerthEle3 = document.createElement("th");
+      BowlerthEle3.textContent = "M";
+      BowlertrEle1.appendChild(BowlerthEle3);
+
+      let BowlerthEle4 = document.createElement("th");
+      BowlerthEle4.textContent = "R";
+      BowlertrEle1.appendChild(BowlerthEle4);
+
+      let BowlerthEle5 = document.createElement("th");
+      BowlerthEle5.textContent = "W";
+      BowlertrEle1.appendChild(BowlerthEle5);
+
+
+
+
+      let battingTeamArray = jsonData.data[0].battingLine;
+
+
+      for (let j of battingTeamArray) {
+        if (j.wicketTypeName === "Batting") {
+
+
+
+          let trEle2 = document.createElement("tr");
+          trEle2.style.color = "white"
+          batsMensTbody.appendChild(trEle2)
+
+
+          let tdBatsmenName1 = document.createElement("td")
+          tdBatsmenName1.textContent = j.playerName + "*";
+          trEle2.appendChild(tdBatsmenName1)
+
+          let tdBatsmenRuns1 = document.createElement("td")
+          tdBatsmenRuns1.textContent = j.score;
+          trEle2.appendChild(tdBatsmenRuns1);
+
+
+          let tdBatsmenBalls1 = document.createElement("td")
+          tdBatsmenBalls1.textContent = j.balls;
+          trEle2.appendChild(tdBatsmenBalls1);
+
+
+          let tdBatsmenFours1 = document.createElement("td")
+          tdBatsmenFours1.textContent = j.s4;
+          trEle2.appendChild(tdBatsmenFours1);
+
+
+          let tdBatsmenSixes1 = document.createElement("td")
+          tdBatsmenSixes1.textContent = j.s6;
+          trEle2.appendChild(tdBatsmenSixes1);
+
+
+        }
+
+
+      }
+
+      let bowingTeamArray = jsonData.data[0].bowlingLine;
+
+      for (let k of bowingTeamArray) {
+
+        let bowlertrEle2 = document.createElement("tr");
+        bowlertrEle2.style.color = "white";
+        bowlerTableBody.appendChild(bowlertrEle2);
+
+        let bowlerName1 = document.createElement("td");
+        bowlerName1.textContent = k.player.name;
+        bowlertrEle2.appendChild(bowlerName1);
+
+        let bowlerOneOvers = document.createElement("td");
+        bowlerOneOvers.textContent = k.over;
+        bowlertrEle2.appendChild(bowlerOneOvers);
+
+
+        let bowlerOneMedianOvers = document.createElement("td");
+        bowlerOneMedianOvers.textContent = k.maiden;
+        bowlertrEle2.appendChild(bowlerOneMedianOvers);
+
+        let bowlerOneRuns = document.createElement("td");
+        bowlerOneRuns.textContent = k.run;
+        bowlertrEle2.appendChild(bowlerOneRuns);
+
+        let bowlerOneWickets = document.createElement("td");
+        bowlerOneWickets.textContent = k.wicket;
+        bowlertrEle2.appendChild(bowlerOneWickets);
+
+
+
+
+      }
+
+    } else {
+
+      let scoreDetailsCardContainerEle = document.createElement("div");
+      ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+
+
+
+
+
+
+      let divEleForTeamScore = document.createElement("div");
+      divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+      divEleForTeamScore.style.height = "100px";
+      divEleForTeamScore.style.width = "93.5%";
+      divEleForTeamScore.style.margin = "3%";
+      divEleForTeamScore.style.padding = "5px";
+      divEleForTeamScore.style.borderRadius = "8px";
+      scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+      let divEleAlignEle = document.createElement("div");
+      divEleAlignEle.style.display = "flex";
+      divEleAlignEle.style.flexDirection = "row";
+      divEleAlignEle.style.justifyContent = "space-between";
+      divEleAlignEle.style.color = "white";
+      divEleForTeamScore.appendChild(divEleAlignEle);
+
+      let AwayTeamNameEle = document.createElement("p");
+      AwayTeamNameEle.textContent = jsonData.data[0].battingTeam.name;
+      divEleAlignEle.appendChild(AwayTeamNameEle);
+
+      let AwayTeamScorEle = document.createElement("p");
+      AwayTeamScorEle.textContent = jsonData.data[0].score + "/" + jsonData.data[0].wickets + "  " + jsonData.data[0].overs;
+      divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+      let divEleAlignEle2 = document.createElement("div");
+      divEleAlignEle2.style.display = "flex";
+      divEleAlignEle2.style.flexDirection = "row";
+      divEleAlignEle2.style.color = "white";
+      divEleAlignEle2.style.justifyContent = "space-between";
+      divEleForTeamScore.appendChild(divEleAlignEle2);
+
+      let HomeTeamNameEle = document.createElement("p");
+      HomeTeamNameEle.textContent = jsonData.data[1].bowlingTeam.name;
+      divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+      let HomeTeamScorEle = document.createElement("p");
+      HomeTeamScorEle.textContent = jsonData.data[1].score + "/" + jsonData.data[1].wickets + "  " + jsonData.data[1].overs;
+      divEleAlignEle2.appendChild(HomeTeamScorEle);
+
+
+      let BattingEle = document.createElement("p");
+      BattingEle.textContent = "Batting Team";
+      BattingEle.style.color = "white";
+      BattingEle.style.textAlign = "center";
+      scoreDetailsCardContainerEle.appendChild(BattingEle);
+
+
+
+      let tableDivContainer = document.createElement("table");
+      tableDivContainer.style.width = "100%";
+      scoreDetailsCardContainerEle.appendChild(tableDivContainer);
+
+      let tableHead = document.createElement("thead");
+      tableDivContainer.appendChild(tableHead)
+
+      let trEle1 = document.createElement("tr");
+      trEle1.style.color = "white";
+      tableHead.appendChild(trEle1);
+
+      let thEle1 = document.createElement("th");
+      thEle1.textContent = "Batters";
+      trEle1.appendChild(thEle1);
+
+      let thEle2 = document.createElement("th");
+      thEle2.textContent = "R";
+      trEle1.appendChild(thEle2);
+
+      let thEle3 = document.createElement("th");
+      thEle3.textContent = "B";
+      trEle1.appendChild(thEle3);
+
+      let thEle4 = document.createElement("th");
+      thEle4.textContent = "4s";
+      trEle1.appendChild(thEle4);
+
+      let thEle5 = document.createElement("th");
+      thEle5.textContent = "6s";
+      trEle1.appendChild(thEle5);
+
+
+
+      let batsMensTbody = document.createElement("tbody");
+      tableDivContainer.appendChild(batsMensTbody);
+
+
+
+      let teamBowlerContainer = document.createElement("div")
+      teamBowlerContainer.style.marginTop = "40px";
+      teamBowlerContainer.classList.add("team_summary")
+      scoreDetailsCardContainerEle.appendChild(teamBowlerContainer)
+
+      let bowlerLabelEle = document.createElement("label");
+      bowlerLabelEle.textContent = "Bowling Team";
+      bowlerLabelEle.style.textAlign = "center";
+      bowlerLabelEle.style.color = "white";
+      scoreDetailsCardContainerEle.appendChild(bowlerLabelEle);
+
+
+      let BowlertableDivContainer = document.createElement("table");
+      BowlertableDivContainer.style.width = "100%";
+      scoreDetailsCardContainerEle.appendChild(BowlertableDivContainer);
+
+      let bowlerTableHead = document.createElement("thead")
+      BowlertableDivContainer.appendChild(bowlerTableHead)
+
+
+      let bowlerTableBody = document.createElement("tbody")
+      BowlertableDivContainer.appendChild(bowlerTableBody)
+
+
+
+      let BowlertrEle1 = document.createElement("tr");
+      BowlertrEle1.style.color = "white";
+      bowlerTableHead.appendChild(BowlertrEle1);
+
+      let BowlerthEle1 = document.createElement("th");
+      BowlerthEle1.textContent = "Bowlers";
+      BowlertrEle1.appendChild(BowlerthEle1);
+
+      let BowlerthEle2 = document.createElement("th");
+      BowlerthEle2.textContent = "O";
+      BowlertrEle1.appendChild(BowlerthEle2);
+
+      let BowlerthEle3 = document.createElement("th");
+      BowlerthEle3.textContent = "M";
+      BowlertrEle1.appendChild(BowlerthEle3);
+
+      let BowlerthEle4 = document.createElement("th");
+      BowlerthEle4.textContent = "R";
+      BowlertrEle1.appendChild(BowlerthEle4);
+
+      let BowlerthEle5 = document.createElement("th");
+      BowlerthEle5.textContent = "W";
+      BowlertrEle1.appendChild(BowlerthEle5);
+
+
+
+
+      let battingTeamArray = jsonData.data[0].battingLine;
+
+
+      for (let j of battingTeamArray) {
+        if (j.wicketTypeName === "Batting") {
+
+
+
+          let trEle2 = document.createElement("tr");
+          trEle2.style.color = "white"
+          batsMensTbody.appendChild(trEle2)
+
+
+          let tdBatsmenName1 = document.createElement("td")
+          tdBatsmenName1.textContent = j.playerName + "*";
+          trEle2.appendChild(tdBatsmenName1)
+
+          let tdBatsmenRuns1 = document.createElement("td")
+          tdBatsmenRuns1.textContent = j.score;
+          trEle2.appendChild(tdBatsmenRuns1);
+
+
+          let tdBatsmenBalls1 = document.createElement("td")
+          tdBatsmenBalls1.textContent = j.balls;
+          trEle2.appendChild(tdBatsmenBalls1);
+
+
+          let tdBatsmenFours1 = document.createElement("td")
+          tdBatsmenFours1.textContent = j.s4;
+          trEle2.appendChild(tdBatsmenFours1);
+
+
+          let tdBatsmenSixes1 = document.createElement("td")
+          tdBatsmenSixes1.textContent = j.s6;
+          trEle2.appendChild(tdBatsmenSixes1);
+
+        }
+
+
+      }
+
+      let bowingTeamArray = jsonData.data[0].bowlingLine;
+
+      for (let k of bowingTeamArray) {
+
+        let bowlertrEle2 = document.createElement("tr");
+        bowlertrEle2.style.color = "white";
+        bowlerTableBody.appendChild(bowlertrEle2);
+
+        let bowlerName1 = document.createElement("td");
+        bowlerName1.textContent = k.player.name;
+        bowlertrEle2.appendChild(bowlerName1);
+
+        let bowlerOneOvers = document.createElement("td");
+        bowlerOneOvers.textContent = k.over;
+        bowlertrEle2.appendChild(bowlerOneOvers);
+
+
+        let bowlerOneMedianOvers = document.createElement("td");
+        bowlerOneMedianOvers.textContent = k.maiden;
+        bowlertrEle2.appendChild(bowlerOneMedianOvers);
+
+        let bowlerOneRuns = document.createElement("td");
+        bowlerOneRuns.textContent = k.run;
+        bowlertrEle2.appendChild(bowlerOneRuns);
+
+        let bowlerOneWickets = document.createElement("td");
+        bowlerOneWickets.textContent = k.wicket;
+        bowlertrEle2.appendChild(bowlerOneWickets);
+
+      }
+
+    }
+
+  }
+
+
+
+
+  function scoreDetails(matchId) {
+
+    const url = `https://os-sports-perform.p.rapidapi.com/v1/events/innings?event_id=${matchId}`;
+    fetch(url, options)
+      .then(function (response) {
+        if (response.status === 200) {
+          return response.json();
+        } else {
+          return ""
+        }
+
+      })
+      .then(function (jsonData) {
+        ScoreDetailsShowing(jsonData)
+      })
+  }
+
+
+
+
+
+
+
+
+
+  function countriesShow(data) {
+    let n = 0;
+
+    function makeApiCall(index) {
+      if (index >= data.length) {
+        return;
+      }
+
+      let categoriesList = `https://os-sports-perform.p.rapidapi.com/v1/unique-tournaments?category_id=${data[index].id}`;
+      fetch(categoriesList, options)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (jsonData) {
+          // console.log((jsonData.data));
+
+
+          let countriesShowEle = document.getElementById("countriesShow");
+
+          const selectElement = document.createElement("select");
+          selectElement.classList.add("box");
+
+          const countryName = document.createElement("option");
+          countryName.textContent = jsonData.data[0].category.name;
+          selectElement.appendChild(countryName);
+
+
+          selectElement.addEventListener("click", function () {
+            if (this.size === 0) {
+              this.size = this.options.length;
+            } else {
+              this.size = 1;
+            }
+          });
+
+          selectElement.addEventListener("blur", function () {
+            this.size = 1;
+          });
+
+          selectElement.addEventListener("change", function () {
+            const selectedOption = this.options[this.selectedIndex];
+            const selectedValue = selectedOption.value;
+            const selectedText = selectedOption.textContent;
+
+
+
+            const listurl = `https://os-sports-perform.p.rapidapi.com/v1/tournaments?category_id=${selectedValue}`;
+            fetch(listurl, options)
+              .then(function (response) {
+                return response.json();
+              })
+              .then(function (jsonData) {
+                // console.log("countrys", jsonData);
+                for (let m of jsonData.data) {
+                  // console.log(m);
+                  if (selectedText == m.name) {
+                    arrayOfSpecificeTounamentList.push(m);
+                  }
+                }
+
+                if (arrayOfSpecificeTounamentList.length > 0) {
+                  let lastObj = arrayOfSpecificeTounamentList[arrayOfSpecificeTounamentList.length - 1]
+                  console.log(lastObj.id)
+                  let lastIndexUrl = `https://os-sports-perform.p.rapidapi.com/v1/tournaments/events?tournament_id=${lastObj.id}&page=0&course_events=last`;
+                  fetch(lastIndexUrl, options)
+                    .then(function (response) {
+                      return response.json();
+                    })
+                    .then(function (jsonData) {
+                      // console.log();
+                      cricketBgMainContainerEle.remove();
+
+                      let filteredMatchesEle = document.getElementById("filteredMatches");
+
+                      for (let i of jsonData.data.events) {
+
+
+                        let divcardContainer = document.createElement("div");
+                        filteredMatchesEle.appendChild(divcardContainer);
+
+                        let divConatinerforEle = document.createElement("div");
+                        divConatinerforEle.style.backgroundColor = "rgb(24,24,24)";
+                        divConatinerforEle.style.width = "97%";
+                        divConatinerforEle.value = i.id;
+                        divConatinerforEle.style.margin = "5px";
+                        divConatinerforEle.style.color = "white";
+                        divConatinerforEle.style.borderRadius = "10px";
+                        divConatinerforEle.style.padding = "8px";
+                        divConatinerforEle.style.height = "cover";
+                        divcardContainer.appendChild(divConatinerforEle);
+                        divConatinerforEle.addEventListener("click", function (event) {
+                          event.preventDefault();
+                          if (i.status.type === 'notstarted') {
+
+                            filteredMatchesEle.style.display = "none";
+                            let matchIdEventData = divConatinerforEle.value;
+                            // console.log("not", matchIdEventData);
+                            noteStartedMatches(matchIdEventData)
+
+                          } else if (i.status.type === 'finished' || i.status.type === "willcontinue") {
+                            filteredMatchesEle.style.display = "none";
+                            FineshedMatchesFunc(divConatinerforEle.value)
+                          }
+                          else {
+                            filteredMatchesEle.style.display = "none";
+                            let matchId = divConatinerforEle.value;
+                            scoreDetails(matchId)
+
+                          }
+
+                        })
+
+                        let countryName = document.createElement("p");
+                        countryName.textContent = i.tournament.category.name + "  ." + i.tournament.slug;
+                        countryName.style.fontSize = "14px";
+                        divConatinerforEle.appendChild(countryName);
+
+                        let divEleforAwayteamScoreAndName = document.createElement("div");
+                        divEleforAwayteamScoreAndName.style.display = "flex";
+                        divEleforAwayteamScoreAndName.style.flexDirection = "row";
+                        divEleforAwayteamScoreAndName.style.justifyContent = "space-between";
+                        divConatinerforEle.appendChild(divEleforAwayteamScoreAndName);
+
+                        let awayTeamName = document.createElement("p");
+                        awayTeamName.textContent = i.awayTeam.name;
+                        awayTeamName.style.fontSize = "14px";
+                        divEleforAwayteamScoreAndName.appendChild(awayTeamName);
+
+                        let awayTeamScore = document.createElement("p");
+                        awayTeamScore.textContent = (Object.entries(i.awayScore)).length === 3 ? i.awayScore.innings.inning1.score + "/" + i.awayScore.innings.inning1.wickets + "  " + "(" + i.awayScore.innings.inning1.overs + ")" : "";
+                        awayTeamScore.style.fontSize = "14px";
+                        divEleforAwayteamScoreAndName.appendChild(awayTeamScore);
+
+                        let divEleforHometeamScoreAndName = document.createElement("div");
+                        divEleforHometeamScoreAndName.style.display = "flex";
+                        divEleforHometeamScoreAndName.style.flexDirection = "row";
+                        divEleforHometeamScoreAndName.style.justifyContent = "space-between";
+                        divConatinerforEle.appendChild(divEleforHometeamScoreAndName);
+
+
+
+                        let homeTeamName = document.createElement("p");
+                        homeTeamName.textContent = i.homeTeam.name;
+                        homeTeamName.style.fontSize = "14px";
+                        divEleforHometeamScoreAndName.appendChild(homeTeamName);
+
+                        let homeTeamScore = document.createElement("p");
+                        homeTeamScore.textContent = (Object.entries(i.homeScore)).length === 3 ? i.homeScore.innings.inning1.score + "/" + i.homeScore.innings.inning1.wickets + "  " + "(" + i.homeScore.innings.inning1.overs + ")" : "";
+                        homeTeamScore.style.fontSize = "14px";
+                        divEleforHometeamScoreAndName.appendChild(homeTeamScore);
+
+                        let resultEle = document.createElement("p");
+                        resultEle.textContent = i.note;
+                        resultEle.style.fontSize = "14px";
+                        divConatinerforEle.appendChild(resultEle);
+
+
+
+
+                      }
+
+
+                    })
+
+
+
+                }
+              })
+
+
+            // Handle the selected value here
+            console.log("Selected value:", selectedValue);
+            console.log("Selected text:", selectedText);
+
+            // Move the selected option to the top of the dropdown list
+            this.insertBefore(selectedOption, this.firstChild);
+
+            // Reset the select element to show the first option
+            this.selectedIndex = 0;
+            this.size = 1;
+          });
+
+
+
+
+
+
+
+          // Iterate over the data and create option elements
+          for (let item of jsonData.data) {
+
+            // Create an option element
+            const optionElement = document.createElement("option");
+
+            // Set the value and text of the option element
+            optionElement.value = item.category.id;
+            optionElement.textContent = item.name;
+
+            // Append the option element to the select element
+            selectElement.appendChild(optionElement);
+          }
+
+          // Append the select element to the dropdown container
+          countriesShowEle.appendChild(selectElement);
+
+
+
+          setTimeout(function () {
+            makeApiCall(index + 1);
+          }, 1000); // Delay of 1 second (1000 milliseconds)
+          // for (let option of selectElement) {
+          //   console.log(option)
+          // }
+
+          const searchInput = document.getElementById("searchInput");
+
+          function handleSearch() {
+            const query = searchInput.value.toLowerCase();
+
+
+            // const option = selectElement.getElementsByTagName("select");
+              const text = selectElement[0].textContent.toLowerCase();
+              if (text.includes(query)) {
+                // console.log(text)
+                selectElement.style.display = "block";
+              } else {
+                selectElement.style.display = "none";
+              }
+            
+          }
+
+          searchInput.addEventListener("input", handleSearch);
+
+        });
+
+
+    }
+
+    makeApiCall(n);
+  }
+
+
+
+
+  let countrysUrl = 'https://os-sports-perform.p.rapidapi.com/v1/categories?sport_id=62';
+  fetch(countrysUrl, options)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (jsonData) {
+      countriesShow(jsonData.data);
+    });
+
+
+
+  let arrayFordates = [];
+
+
+
+
+
+  function generateCalendar() {
+    var calendar = document.getElementById("calendar");
+    var currentDate = new Date();
+    var year = currentDate.getFullYear();
+    var month = currentDate.getMonth();
+
+    var monthNames = [
+      "January", "February", "March",
+      "April", "May", "June",
+      "July", "August", "September",
+      "October", "November", "December"
+    ];
+
+    var prevMonthButton = document.createElement("button");
+    prevMonthButton.innerHTML = '<i  style="color: black;">Pervious</i>';
+    prevMonthButton.addEventListener("click", function () {
+      if (month === 0) {
+        month = 11;
+        year--;
+      } else {
+        month--;
+      }
+      clearCalendar();
+      generateMonth(year, month);
+    });
+
+    calendar.appendChild(prevMonthButton);
+
+    var nextMonthButton = document.createElement("button");
+    nextMonthButton.innerHTML = '<i  style="color: black;">Next</i>';
+    nextMonthButton.addEventListener("click", function () {
+      if (month === 11) {
+        month = 0;
+        year++;
+      } else {
+        month++;
+      }
+      clearCalendar();
+      generateMonth(year, month);
+    });
+
+    calendar.appendChild(nextMonthButton);
+
+    function clearCalendar() {
+      while (calendar.firstChild) {
+        calendar.removeChild(calendar.firstChild);
+      }
+      calendar.appendChild(prevMonthButton);
+      calendar.appendChild(nextMonthButton);
+    }
+
+    function generateMonth(year, month) {
+      var table = document.createElement("table");
+
+      var thead = document.createElement("thead");
+      var headerRow = document.createElement("tr");
+      var headerCell = document.createElement("th");
+      headerCell.colSpan = 7;
+      headerCell.textContent = monthNames[month] + " " + year;
+      headerRow.appendChild(headerCell);
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
+
+      var tbody = document.createElement("tbody");
+
+      var weekDaysRow = document.createElement("tr");
+      var weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      for (var i = 0; i < 7; i++) {
+        var weekDayCell = document.createElement("th");
+        weekDayCell.textContent = weekDays[i];
+        weekDaysRow.appendChild(weekDayCell);
+      }
+      tbody.appendChild(weekDaysRow);
+
+      var firstDay = new Date(year, month, 1);
+      var startingDay = firstDay.getDay();
+      var daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      var date = 1;
+      for (var i = 0; i < 6; i++) {
+        var weekRow = document.createElement("tr");
+
+        for (var j = 0; j < 7; j++) {
+          if (i === 0 && j < startingDay) {
+            var emptyCell = document.createElement("td");
+            weekRow.appendChild(emptyCell);
+          } else if (date > daysInMonth) {
+            break;
+          } else {
+            var dayCell = document.createElement("td");
+            dayCell.textContent = date;
+
+            if (
+              date === currentDate.getDate() &&
+              month === currentDate.getMonth() &&
+              year === currentDate.getFullYear()
+            ) {
+              dayCell.classList.add("highlight");
+            }
+
+            dayCell.addEventListener("click", function () {
+              // Remove highlight from previously selected date
+              var highlighted = document.querySelector(".highlight");
+              if (highlighted) {
+                highlighted.classList.remove("highlight");
+              }
+
+              // Add highlight to the clicked date
+              this.classList.add("highlight");
+
+              // Get the selected date
+              var selectedDay = this.textContent;
+              var selectedMonth = month + 1; // Month value is zero-based, so add 1
+              var selectedYear = year;
+              var selectedDate;
+
+              // Console log the selected date components
+              if (selectedMonth < 10) {
+                selectedMonth = "0" + selectedMonth;
+              }
+              selectedDate = selectedYear + "-" + selectedMonth + "-" + selectedDay;
+
+
+
+              var contentContainer = document.getElementById("nextDayMatchesConatiner");
+              function updatedDate(selectedDate) {
+                // Remove the previously appended elements
+                clearContent();
+
+                // Render the page based on the selected date
+                renderPage(selectedDate);
+              }
+
+              updatedDate(selectedDate)
+
+              function clearContent() {
+                while (contentContainer.firstChild) {
+                  contentContainer.removeChild(contentContainer.firstChild);
+                }
+              }
+
+
+
+              function FineshedMatchesFunc(matchId) {
+                console.log("Calender Finished matches", matchId);
+
+                const urleventData = `https://os-sports-perform.p.rapidapi.com/v1/events/innings?event_id=${matchId}`;
+                fetch(urleventData, options)
+                  .then(function (response) {
+                    return response.json();
+                  })
+                  .then(function (jsonData) {
+                    console.log(jsonData);
+
+
+                    let ScoreDetailsContainerEle = document.getElementById("calenderCompletedMatches");
+
+                    let scoreDetailsCardContainerEle = document.createElement("div");
+                    ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+                    // console.log(document.getElementById("calenderCompletedMatches"));
+
+
+
+                    let divEleForTeamScore = document.createElement("div");
+                    divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+                    divEleForTeamScore.style.height = "100px";
+                    divEleForTeamScore.style.width = "93.5%";
+                    divEleForTeamScore.style.margin = "3%";
+                    divEleForTeamScore.style.padding = "5px";
+                    divEleForTeamScore.style.borderRadius = "8px";
+                    scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+                    let divEleAlignEle = document.createElement("div");
+                    divEleAlignEle.style.display = "flex";
+                    divEleAlignEle.style.flexDirection = "row";
+                    divEleAlignEle.style.justifyContent = "space-between";
+                    divEleAlignEle.style.color = "white";
+                    divEleForTeamScore.appendChild(divEleAlignEle);
+
+                    let AwayTeamNameEle = document.createElement("p");
+                    AwayTeamNameEle.textContent = jsonData.data[0].battingTeam.name;
+                    divEleAlignEle.appendChild(AwayTeamNameEle);
+
+                    let AwayTeamScorEle = document.createElement("p");
+                    AwayTeamScorEle.textContent = jsonData.data[0].score + "/" + jsonData.data[0].wickets + "  " + jsonData.data[0].overs;
+                    divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+                    let divEleAlignEle2 = document.createElement("div");
+                    divEleAlignEle2.style.display = "flex";
+                    divEleAlignEle2.style.flexDirection = "row";
+                    divEleAlignEle2.style.color = "white";
+                    divEleAlignEle2.style.justifyContent = "space-between";
+                    divEleForTeamScore.appendChild(divEleAlignEle2);
+
+                    let HomeTeamNameEle = document.createElement("p");
+                    HomeTeamNameEle.textContent = jsonData.data[0].bowlingTeam.name;
+                    divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+                    let HomeTeamScorEle = document.createElement("p");
+                    HomeTeamScorEle.textContent = jsonData.data[1].score + "/" + jsonData.data[1].wickets + "  " + jsonData.data[1].overs;
+                    divEleAlignEle2.appendChild(HomeTeamScorEle);
+
+
+                    let BattingEle = document.createElement("p");
+                    BattingEle.textContent = "Batting Team";
+                    BattingEle.style.color = "white";
+                    BattingEle.style.textAlign = "center";
+                    scoreDetailsCardContainerEle.appendChild(BattingEle);
+
+
+
+                    let tableDivContainer = document.createElement("table");
+                    tableDivContainer.style.width = "100%";
+                    scoreDetailsCardContainerEle.appendChild(tableDivContainer);
+
+                    let tableHead = document.createElement("thead");
+                    tableDivContainer.appendChild(tableHead)
+
+                    let trEle1 = document.createElement("tr");
+                    trEle1.style.color = "white";
+                    tableHead.appendChild(trEle1);
+
+                    let thEle1 = document.createElement("th");
+                    thEle1.textContent = "Batters";
+                    trEle1.appendChild(thEle1);
+
+                    let thEle2 = document.createElement("th");
+                    thEle2.textContent = "R";
+                    trEle1.appendChild(thEle2);
+
+                    let thEle3 = document.createElement("th");
+                    thEle3.textContent = "B";
+                    trEle1.appendChild(thEle3);
+
+                    let thEle4 = document.createElement("th");
+                    thEle4.textContent = "4s";
+                    trEle1.appendChild(thEle4);
+
+                    let thEle5 = document.createElement("th");
+                    thEle5.textContent = "6s";
+                    trEle1.appendChild(thEle5);
+
+
+
+                    let batsMensTbody = document.createElement("tbody");
+                    tableDivContainer.appendChild(batsMensTbody);
+
+
+
+                    let teamBowlerContainer = document.createElement("div")
+                    teamBowlerContainer.style.marginTop = "40px";
+                    teamBowlerContainer.classList.add("team_summary")
+                    scoreDetailsCardContainerEle.appendChild(teamBowlerContainer)
+
+                    let bowlerLabelEle = document.createElement("label");
+                    bowlerLabelEle.textContent = "Bowling Team";
+                    bowlerLabelEle.style.textAlign = "center";
+                    bowlerLabelEle.style.color = "white";
+                    scoreDetailsCardContainerEle.appendChild(bowlerLabelEle);
+
+
+                    let BowlertableDivContainer = document.createElement("table");
+                    BowlertableDivContainer.style.width = "100%";
+                    scoreDetailsCardContainerEle.appendChild(BowlertableDivContainer);
+
+                    let bowlerTableHead = document.createElement("thead")
+                    BowlertableDivContainer.appendChild(bowlerTableHead)
+
+
+                    let bowlerTableBody = document.createElement("tbody")
+                    BowlertableDivContainer.appendChild(bowlerTableBody)
+
+
+
+                    let BowlertrEle1 = document.createElement("tr");
+                    BowlertrEle1.style.color = "white";
+                    bowlerTableHead.appendChild(BowlertrEle1);
+
+                    let BowlerthEle1 = document.createElement("th");
+                    BowlerthEle1.textContent = "Bowlers";
+                    BowlertrEle1.appendChild(BowlerthEle1);
+
+                    let BowlerthEle2 = document.createElement("th");
+                    BowlerthEle2.textContent = "O";
+                    BowlertrEle1.appendChild(BowlerthEle2);
+
+                    let BowlerthEle3 = document.createElement("th");
+                    BowlerthEle3.textContent = "M";
+                    BowlertrEle1.appendChild(BowlerthEle3);
+
+                    let BowlerthEle4 = document.createElement("th");
+                    BowlerthEle4.textContent = "R";
+                    BowlertrEle1.appendChild(BowlerthEle4);
+
+                    let BowlerthEle5 = document.createElement("th");
+                    BowlerthEle5.textContent = "W";
+                    BowlertrEle1.appendChild(BowlerthEle5);
+
+
+
+
+                    let battingTeamArray = jsonData.data[1].battingLine;
+
+
+                    for (let j of battingTeamArray) {
+                      if (j.wicketTypeName !== "Did not bat") {
+
+
+
+                        let trEle2 = document.createElement("tr");
+                        trEle2.style.color = "white"
+                        batsMensTbody.appendChild(trEle2)
+
+
+                        let tdBatsmenName1 = document.createElement("td")
+                        tdBatsmenName1.textContent = j.playerName + "*";
+                        trEle2.appendChild(tdBatsmenName1)
+
+                        let tdBatsmenRuns1 = document.createElement("td")
+                        tdBatsmenRuns1.textContent = j.score;
+                        trEle2.appendChild(tdBatsmenRuns1);
+
+
+                        let tdBatsmenBalls1 = document.createElement("td")
+                        tdBatsmenBalls1.textContent = j.balls;
+                        trEle2.appendChild(tdBatsmenBalls1);
+
+
+                        let tdBatsmenFours1 = document.createElement("td")
+                        tdBatsmenFours1.textContent = j.s4;
+                        trEle2.appendChild(tdBatsmenFours1);
+
+
+                        let tdBatsmenSixes1 = document.createElement("td")
+                        tdBatsmenSixes1.textContent = j.s6;
+                        trEle2.appendChild(tdBatsmenSixes1);
+
+                      }
+
+
+                    }
+
+                    let bowingTeamArray = jsonData.data[1].bowlingLine;
+
+                    for (let k of bowingTeamArray) {
+
+                      let bowlertrEle2 = document.createElement("tr");
+                      bowlertrEle2.style.color = "white";
+                      bowlerTableBody.appendChild(bowlertrEle2);
+
+                      let bowlerName1 = document.createElement("td");
+                      bowlerName1.textContent = k.player.name;
+                      bowlertrEle2.appendChild(bowlerName1);
+
+                      let bowlerOneOvers = document.createElement("td");
+                      bowlerOneOvers.textContent = k.over;
+                      bowlertrEle2.appendChild(bowlerOneOvers);
+
+
+                      let bowlerOneMedianOvers = document.createElement("td");
+                      bowlerOneMedianOvers.textContent = k.maiden;
+                      bowlertrEle2.appendChild(bowlerOneMedianOvers);
+
+                      let bowlerOneRuns = document.createElement("td");
+                      bowlerOneRuns.textContent = k.run;
+                      bowlertrEle2.appendChild(bowlerOneRuns);
+
+                      let bowlerOneWickets = document.createElement("td");
+                      bowlerOneWickets.textContent = k.wicket;
+                      bowlertrEle2.appendChild(bowlerOneWickets);
+
+                    }
+
+
+
+                  })
+
+
+
+
+
+
+              }
+
+
+
+              function noteStartedMatches(matchIdEventData) {
+
+                const urleventData = `https://os-sports-perform.p.rapidapi.com/v1/events/data?event_id=${matchIdEventData}`;
+                fetch(urleventData, options)
+                  .then(function (response) {
+                    return response.json();
+                  })
+                  .then(function (data) {
+
+
+                    let ScoreDetailsContainerEle = document.getElementById("calenderCompletedMatches");
+
+
+                    let scoreDetailsCardContainerEle = document.createElement("div");
+                    ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+
+                    let divEleForTeamScore = document.createElement("div");
+                    divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+                    divEleForTeamScore.style.height = "120px";
+                    divEleForTeamScore.style.width = "93.5%";
+                    divEleForTeamScore.style.margin = "3%";
+                    divEleForTeamScore.style.padding = "5px";
+                    divEleForTeamScore.style.color = "white";
+                    divEleForTeamScore.style.fontSize = "14px";
+                    divEleForTeamScore.style.borderRadius = "8px";
+                    scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+                    let divEleAlignEle = document.createElement("div");
+                    divEleAlignEle.style.display = "flex";
+                    divEleAlignEle.style.flexDirection = "row";
+                    divEleAlignEle.style.justifyContent = "space-between";
+                    divEleForTeamScore.appendChild(divEleAlignEle);
+
+                    let AwayTeamNameEle = document.createElement("p");
+                    AwayTeamNameEle.textContent = data.data.awayTeam.name;
+                    divEleAlignEle.appendChild(AwayTeamNameEle);
+
+                    let AwayTeamScorEle = document.createElement("p");
+                    AwayTeamScorEle.textContent = (Object.entries(data.data.awayScore)).length === 3 ? data.data.awayScore.innings.inning1.score + "/" + data.data.awayScore.innings.inning1.wickets + "  " + "(" + data.data.awayScore.innings.inning1.overs + ")" : "";
+                    divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+                    let divEleAlignEle2 = document.createElement("div");
+                    divEleAlignEle2.style.display = "flex";
+                    divEleAlignEle2.style.flexDirection = "row";
+                    divEleAlignEle2.style.justifyContent = "space-between";
+                    divEleForTeamScore.appendChild(divEleAlignEle2);
+
+                    let HomeTeamNameEle = document.createElement("p");
+                    HomeTeamNameEle.textContent = data.data.homeTeam.name;
+                    divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+                    let HomeTeamScorEle = document.createElement("p");
+                    HomeTeamScorEle.textContent = (Object.entries(data.data.homeScore)).length === 3 ? data.data.homeScore.innings.inning1.score + "/" + data.data.homeScore.innings.inning1.wickets + "  " + "(" + data.data.homeScore.innings.inning1.overs + ")" : "";
+                    divEleAlignEle2.appendChild(HomeTeamScorEle);
+
+                    let winnerEle = document.createElement("p");
+                    winnerEle.textContent = data.data.note;
+                    divEleForTeamScore.appendChild(winnerEle);
+
+                    let divcardContainerForSummary = document.createElement("div");
+                    divcardContainerForSummary.style.backgroundColor = "rgb(24,24,24)";
+                    divcardContainerForSummary.style.height = "150px";
+                    divcardContainerForSummary.style.width = "93.5%";
+                    divcardContainerForSummary.style.margin = "3%";
+                    divcardContainerForSummary.style.padding = "5px";
+                    divcardContainerForSummary.style.color = "white";
+                    divcardContainerForSummary.style.fontSize = "14px";
+                    divcardContainerForSummary.style.borderRadius = "8px";
+                    scoreDetailsCardContainerEle.appendChild(divcardContainerForSummary);
+
+
+                    let tossWinEle = document.createElement("p");
+                    tossWinEle.textContent = "toss win By  : " + data.data.tossWin === undefined ? "" : data.data.tossWin;
+                    divcardContainerForSummary.appendChild(tossWinEle);
+
+                    let venueEle = document.createElement("p");
+                    venueEle.textContent = "City : " + data.data.venue.city.name + "," + data.data.venue.country.name;
+                    divcardContainerForSummary.appendChild(venueEle);
+
+                    let stadium = document.createElement("p");
+                    stadium.textContent = "Stadium : " + data.data.venue.stadium.name;
+                    divcardContainerForSummary.appendChild(stadium);
+
+
+                    let playerOftheMatchInnings = document.createElement("p");
+                    playerOftheMatchInnings.textContent = "Man of the Match  : " + data.data.manOfMatch.name;
+                    divcardContainerForSummary.appendChild(playerOftheMatchInnings);
+
+
+
+
+
+                  })
+
+              }
+
+
+              function ScoreDetailsShowing(jsonData) {
+
+                // console.log(jsonData)
+
+                if ((jsonData.data).length === 1) {
+
+
+                  let ScoreDetailsContainerEle = document.getElementById("calenderCompletedMatches");
+                  let scoreDetailsCardContainerEle = document.createElement("div");
+                  ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+
+
+
+
+                  let divEleForTeamScore = document.createElement("div");
+                  divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+                  divEleForTeamScore.style.height = "100px";
+                  divEleForTeamScore.style.width = "93.5%";
+                  divEleForTeamScore.style.margin = "3%";
+                  divEleForTeamScore.style.padding = "5px";
+                  divEleForTeamScore.style.borderRadius = "8px";
+                  scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+                  let divEleAlignEle = document.createElement("div");
+                  divEleAlignEle.style.display = "flex";
+                  divEleAlignEle.style.flexDirection = "row";
+                  divEleAlignEle.style.justifyContent = "space-between";
+
+                  divEleForTeamScore.appendChild(divEleAlignEle);
+
+                  let AwayTeamNameEle = document.createElement("p");
+                  AwayTeamNameEle.style.color = "white";
+                  AwayTeamNameEle.textContent = jsonData.data[0].battingTeam.name;
+                  divEleAlignEle.appendChild(AwayTeamNameEle);
+
+                  let AwayTeamScorEle = document.createElement("p");
+                  AwayTeamScorEle.style.color = "white";
+                  AwayTeamScorEle.textContent = jsonData.data[0].score + "/" + jsonData.data[0].wickets + "  " + jsonData.data[0].overs;
+                  divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+                  let divEleAlignEle2 = document.createElement("div");
+                  divEleAlignEle2.style.display = "flex";
+                  divEleAlignEle2.style.flexDirection = "row";
+                  divEleAlignEle2.style.justifyContent = "space-between";
+                  divEleAlignEle2.style.color = "white";
+                  divEleForTeamScore.appendChild(divEleAlignEle2);
+
+                  let HomeTeamNameEle = document.createElement("p");
+                  HomeTeamNameEle.style.color = "white";
+                  HomeTeamNameEle.textContent = jsonData.data[0].bowlingTeam.name;
+                  divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+
+                  let BattingEle = document.createElement("p");
+                  BattingEle.textContent = "Batting Team";
+                  BattingEle.style.color = "white";
+                  BattingEle.style.textAlign = "center";
+                  scoreDetailsCardContainerEle.appendChild(BattingEle);
+
+
+                  let tableDivContainer = document.createElement("table");
+                  tableDivContainer.style.width = "100%";
+                  scoreDetailsCardContainerEle.appendChild(tableDivContainer);
+
+                  let tableHead = document.createElement("thead");
+                  tableDivContainer.appendChild(tableHead)
+
+                  let trEle1 = document.createElement("tr");
+                  trEle1.style.color = "white";
+                  tableHead.appendChild(trEle1);
+
+                  let thEle1 = document.createElement("th");
+                  thEle1.textContent = "Batters";
+                  trEle1.appendChild(thEle1);
+
+                  let thEle2 = document.createElement("th");
+                  thEle2.textContent = "R";
+                  trEle1.appendChild(thEle2);
+
+                  let thEle3 = document.createElement("th");
+                  thEle3.textContent = "B";
+                  trEle1.appendChild(thEle3);
+
+                  let thEle4 = document.createElement("th");
+                  thEle4.textContent = "4s";
+                  trEle1.appendChild(thEle4);
+
+                  let thEle5 = document.createElement("th");
+                  thEle5.textContent = "6s";
+                  trEle1.appendChild(thEle5);
+
+
+                  let batsMensTbody = document.createElement("tbody");
+                  tableDivContainer.appendChild(batsMensTbody);
+
+
+
+                  let teamBowlerContainer = document.createElement("div")
+                  teamBowlerContainer.style.marginTop = "40px";
+                  teamBowlerContainer.classList.add("team_summary")
+                  scoreDetailsCardContainerEle.appendChild(teamBowlerContainer)
+
+                  let bowlerLabelEle = document.createElement("label");
+                  bowlerLabelEle.textContent = "Bowling Team";
+                  bowlerLabelEle.style.textAlign = "center";
+                  bowlerLabelEle.style.color = "white";
+                  scoreDetailsCardContainerEle.appendChild(bowlerLabelEle);
+
+
+                  let BowlertableDivContainer = document.createElement("table");
+                  BowlertableDivContainer.style.width = "100%";
+                  scoreDetailsCardContainerEle.appendChild(BowlertableDivContainer);
+
+                  let bowlerTableHead = document.createElement("thead")
+                  BowlertableDivContainer.appendChild(bowlerTableHead)
+
+
+                  let bowlerTableBody = document.createElement("tbody")
+                  BowlertableDivContainer.appendChild(bowlerTableBody)
+
+
+
+                  let BowlertrEle1 = document.createElement("tr");
+                  BowlertrEle1.style.color = "white";
+                  bowlerTableHead.appendChild(BowlertrEle1);
+
+                  let BowlerthEle1 = document.createElement("th");
+                  BowlerthEle1.textContent = "Bowlers";
+                  BowlertrEle1.appendChild(BowlerthEle1);
+
+                  let BowlerthEle2 = document.createElement("th");
+                  BowlerthEle2.textContent = "O";
+                  BowlertrEle1.appendChild(BowlerthEle2);
+
+                  let BowlerthEle3 = document.createElement("th");
+                  BowlerthEle3.textContent = "M";
+                  BowlertrEle1.appendChild(BowlerthEle3);
+
+                  let BowlerthEle4 = document.createElement("th");
+                  BowlerthEle4.textContent = "R";
+                  BowlertrEle1.appendChild(BowlerthEle4);
+
+                  let BowlerthEle5 = document.createElement("th");
+                  BowlerthEle5.textContent = "W";
+                  BowlertrEle1.appendChild(BowlerthEle5);
+
+
+
+
+                  let battingTeamArray = jsonData.data[0].battingLine;
+
+
+                  for (let j of battingTeamArray) {
+                    if (j.wicketTypeName === "Batting") {
+
+
+
+                      let trEle2 = document.createElement("tr");
+                      trEle2.style.color = "white"
+                      batsMensTbody.appendChild(trEle2)
+
+
+                      let tdBatsmenName1 = document.createElement("td")
+                      tdBatsmenName1.textContent = j.playerName + "*";
+                      trEle2.appendChild(tdBatsmenName1)
+
+                      let tdBatsmenRuns1 = document.createElement("td")
+                      tdBatsmenRuns1.textContent = j.score;
+                      trEle2.appendChild(tdBatsmenRuns1);
+
+
+                      let tdBatsmenBalls1 = document.createElement("td")
+                      tdBatsmenBalls1.textContent = j.balls;
+                      trEle2.appendChild(tdBatsmenBalls1);
+
+
+                      let tdBatsmenFours1 = document.createElement("td")
+                      tdBatsmenFours1.textContent = j.s4;
+                      trEle2.appendChild(tdBatsmenFours1);
+
+
+                      let tdBatsmenSixes1 = document.createElement("td")
+                      tdBatsmenSixes1.textContent = j.s6;
+                      trEle2.appendChild(tdBatsmenSixes1);
+
+
+                    }
+
+
+                  }
+
+                  let bowingTeamArray = jsonData.data[0].bowlingLine;
+
+                  for (let k of bowingTeamArray) {
+
+                    let bowlertrEle2 = document.createElement("tr");
+                    bowlertrEle2.style.color = "white";
+                    bowlerTableBody.appendChild(bowlertrEle2);
+
+                    let bowlerName1 = document.createElement("td");
+                    bowlerName1.textContent = k.player.name;
+                    bowlertrEle2.appendChild(bowlerName1);
+
+                    let bowlerOneOvers = document.createElement("td");
+                    bowlerOneOvers.textContent = k.over;
+                    bowlertrEle2.appendChild(bowlerOneOvers);
+
+
+                    let bowlerOneMedianOvers = document.createElement("td");
+                    bowlerOneMedianOvers.textContent = k.maiden;
+                    bowlertrEle2.appendChild(bowlerOneMedianOvers);
+
+                    let bowlerOneRuns = document.createElement("td");
+                    bowlerOneRuns.textContent = k.run;
+                    bowlertrEle2.appendChild(bowlerOneRuns);
+
+                    let bowlerOneWickets = document.createElement("td");
+                    bowlerOneWickets.textContent = k.wicket;
+                    bowlertrEle2.appendChild(bowlerOneWickets);
+
+
+
+
+                  }
+
+                } else {
+
+                  let scoreDetailsCardContainerEle = document.createElement("div");
+
+                  ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+
+
+
+
+                  let divEleForTeamScore = document.createElement("div");
+                  divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+                  divEleForTeamScore.style.height = "100px";
+                  divEleForTeamScore.style.width = "93.5%";
+                  divEleForTeamScore.style.margin = "3%";
+                  divEleForTeamScore.style.padding = "5px";
+                  divEleForTeamScore.style.borderRadius = "8px";
+                  scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+                  let divEleAlignEle = document.createElement("div");
+                  divEleAlignEle.style.display = "flex";
+                  divEleAlignEle.style.flexDirection = "row";
+                  divEleAlignEle.style.justifyContent = "space-between";
+                  divEleAlignEle.style.color = "white";
+                  divEleForTeamScore.appendChild(divEleAlignEle);
+
+                  let AwayTeamNameEle = document.createElement("p");
+                  AwayTeamNameEle.textContent = jsonData.data[0].battingTeam.name;
+                  divEleAlignEle.appendChild(AwayTeamNameEle);
+
+                  let AwayTeamScorEle = document.createElement("p");
+                  AwayTeamScorEle.textContent = jsonData.data[0].score + "/" + jsonData.data[0].wickets + "  " + jsonData.data[0].overs;
+                  divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+                  let divEleAlignEle2 = document.createElement("div");
+                  divEleAlignEle2.style.display = "flex";
+                  divEleAlignEle2.style.flexDirection = "row";
+                  divEleAlignEle2.style.color = "white";
+                  divEleAlignEle2.style.justifyContent = "space-between";
+                  divEleForTeamScore.appendChild(divEleAlignEle2);
+
+                  let HomeTeamNameEle = document.createElement("p");
+                  HomeTeamNameEle.textContent = jsonData.data[1].bowlingTeam.name;
+                  divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+                  let HomeTeamScorEle = document.createElement("p");
+                  HomeTeamScorEle.textContent = jsonData.data[1].score + "/" + jsonData.data[1].wickets + "  " + jsonData.data[1].overs;
+                  divEleAlignEle2.appendChild(HomeTeamScorEle);
+
+
+                  let BattingEle = document.createElement("p");
+                  BattingEle.textContent = "Batting Team";
+                  BattingEle.style.color = "white";
+                  BattingEle.style.textAlign = "center";
+                  scoreDetailsCardContainerEle.appendChild(BattingEle);
+
+
+
+                  let tableDivContainer = document.createElement("table");
+                  tableDivContainer.style.width = "100%";
+                  scoreDetailsCardContainerEle.appendChild(tableDivContainer);
+
+                  let tableHead = document.createElement("thead");
+                  tableDivContainer.appendChild(tableHead)
+
+                  let trEle1 = document.createElement("tr");
+                  trEle1.style.color = "white";
+                  tableHead.appendChild(trEle1);
+
+                  let thEle1 = document.createElement("th");
+                  thEle1.textContent = "Batters";
+                  trEle1.appendChild(thEle1);
+
+                  let thEle2 = document.createElement("th");
+                  thEle2.textContent = "R";
+                  trEle1.appendChild(thEle2);
+
+                  let thEle3 = document.createElement("th");
+                  thEle3.textContent = "B";
+                  trEle1.appendChild(thEle3);
+
+                  let thEle4 = document.createElement("th");
+                  thEle4.textContent = "4s";
+                  trEle1.appendChild(thEle4);
+
+                  let thEle5 = document.createElement("th");
+                  thEle5.textContent = "6s";
+                  trEle1.appendChild(thEle5);
+
+
+
+                  let batsMensTbody = document.createElement("tbody");
+                  tableDivContainer.appendChild(batsMensTbody);
+
+
+
+                  let teamBowlerContainer = document.createElement("div")
+                  teamBowlerContainer.style.marginTop = "40px";
+                  teamBowlerContainer.classList.add("team_summary")
+                  scoreDetailsCardContainerEle.appendChild(teamBowlerContainer)
+
+                  let bowlerLabelEle = document.createElement("label");
+                  bowlerLabelEle.textContent = "Bowling Team";
+                  bowlerLabelEle.style.textAlign = "center";
+                  bowlerLabelEle.style.color = "white";
+                  scoreDetailsCardContainerEle.appendChild(bowlerLabelEle);
+
+
+                  let BowlertableDivContainer = document.createElement("table");
+                  BowlertableDivContainer.style.width = "100%";
+                  scoreDetailsCardContainerEle.appendChild(BowlertableDivContainer);
+
+                  let bowlerTableHead = document.createElement("thead")
+                  BowlertableDivContainer.appendChild(bowlerTableHead)
+
+
+                  let bowlerTableBody = document.createElement("tbody")
+                  BowlertableDivContainer.appendChild(bowlerTableBody)
+
+
+
+                  let BowlertrEle1 = document.createElement("tr");
+                  BowlertrEle1.style.color = "white";
+                  bowlerTableHead.appendChild(BowlertrEle1);
+
+                  let BowlerthEle1 = document.createElement("th");
+                  BowlerthEle1.textContent = "Bowlers";
+                  BowlertrEle1.appendChild(BowlerthEle1);
+
+                  let BowlerthEle2 = document.createElement("th");
+                  BowlerthEle2.textContent = "O";
+                  BowlertrEle1.appendChild(BowlerthEle2);
+
+                  let BowlerthEle3 = document.createElement("th");
+                  BowlerthEle3.textContent = "M";
+                  BowlertrEle1.appendChild(BowlerthEle3);
+
+                  let BowlerthEle4 = document.createElement("th");
+                  BowlerthEle4.textContent = "R";
+                  BowlertrEle1.appendChild(BowlerthEle4);
+
+                  let BowlerthEle5 = document.createElement("th");
+                  BowlerthEle5.textContent = "W";
+                  BowlertrEle1.appendChild(BowlerthEle5);
+
+
+
+
+                  let battingTeamArray = jsonData.data[0].battingLine;
+
+
+                  for (let j of battingTeamArray) {
+                    if (j.wicketTypeName === "Batting") {
+
+
+
+                      let trEle2 = document.createElement("tr");
+                      trEle2.style.color = "white"
+                      batsMensTbody.appendChild(trEle2)
+
+
+                      let tdBatsmenName1 = document.createElement("td")
+                      tdBatsmenName1.textContent = j.playerName + "*";
+                      trEle2.appendChild(tdBatsmenName1)
+
+                      let tdBatsmenRuns1 = document.createElement("td")
+                      tdBatsmenRuns1.textContent = j.score;
+                      trEle2.appendChild(tdBatsmenRuns1);
+
+
+                      let tdBatsmenBalls1 = document.createElement("td")
+                      tdBatsmenBalls1.textContent = j.balls;
+                      trEle2.appendChild(tdBatsmenBalls1);
+
+
+                      let tdBatsmenFours1 = document.createElement("td")
+                      tdBatsmenFours1.textContent = j.s4;
+                      trEle2.appendChild(tdBatsmenFours1);
+
+
+                      let tdBatsmenSixes1 = document.createElement("td")
+                      tdBatsmenSixes1.textContent = j.s6;
+                      trEle2.appendChild(tdBatsmenSixes1);
+
+                    }
+
+
+                  }
+
+                  let bowingTeamArray = jsonData.data[0].bowlingLine;
+
+                  for (let k of bowingTeamArray) {
+
+                    let bowlertrEle2 = document.createElement("tr");
+                    bowlertrEle2.style.color = "white";
+                    bowlerTableBody.appendChild(bowlertrEle2);
+
+                    let bowlerName1 = document.createElement("td");
+                    bowlerName1.textContent = k.player.name;
+                    bowlertrEle2.appendChild(bowlerName1);
+
+                    let bowlerOneOvers = document.createElement("td");
+                    bowlerOneOvers.textContent = k.over;
+                    bowlertrEle2.appendChild(bowlerOneOvers);
+
+
+                    let bowlerOneMedianOvers = document.createElement("td");
+                    bowlerOneMedianOvers.textContent = k.maiden;
+                    bowlertrEle2.appendChild(bowlerOneMedianOvers);
+
+                    let bowlerOneRuns = document.createElement("td");
+                    bowlerOneRuns.textContent = k.run;
+                    bowlertrEle2.appendChild(bowlerOneRuns);
+
+                    let bowlerOneWickets = document.createElement("td");
+                    bowlerOneWickets.textContent = k.wicket;
+                    bowlertrEle2.appendChild(bowlerOneWickets);
+
+                  }
+
+                }
+
+              }
+
+
+
+
+              function scoreDetails(matchId) {
+
+                const url = `https://os-sports-perform.p.rapidapi.com/v1/events/innings?event_id=${matchId}`;
+                fetch(url, options)
+                  .then(function (response) {
+                    if (response.status === 200) {
+                      return response.json();
+                    } else {
+                      return ""
+                    }
+
+                  })
+                  .then(function (jsonData) {
+                    ScoreDetailsShowing(jsonData)
+                  })
+              }
+
+
+
+
+              function renderPage(selectedDate) {
+
+                cricketBgMainContainerEle.remove();
+
+                const selecturl = `https://os-sports-perform.p.rapidapi.com/v1/events/schedule/date?date=${selectedDate}&sport_id=62`;
+
+                fetch(selecturl, options)
+                  .then(function (response) {
+                    return response.json();
+                  })
+                  .then(function (jsonData) {
+
+                    todayMatches = jsonData.data;
+
+                    for (let i of todayMatches) {
+
+
+                      let divcardContainer = document.createElement("div");
+                      contentContainer.appendChild(divcardContainer);
+
+                      let divConatinerforEle = document.createElement("div");
+                      divConatinerforEle.style.backgroundColor = "rgb(24,24,24)";
+                      divConatinerforEle.style.width = "97%";
+                      divConatinerforEle.value = i.id;
+                      divConatinerforEle.style.margin = "5px";
+                      divConatinerforEle.style.color = "white";
+                      divConatinerforEle.style.borderRadius = "10px";
+                      divConatinerforEle.style.padding = "8px";
+                      divConatinerforEle.style.height = "cover";
+                      divcardContainer.appendChild(divConatinerforEle);
+                      divConatinerforEle.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        if (i.status.type === 'notstarted') {
+                          contentContainer.style.display = "none";
+                          let matchIdEventData = divConatinerforEle.value;
+                          // console.log("not", matchIdEventData);
+                          noteStartedMatches(matchIdEventData)
+
+                        } else if (i.status.type === 'finished' || i.status.type === "willcontinue") {
+                          contentContainer.style.display = "none";
+                          FineshedMatchesFunc(divConatinerforEle.value)
+                        }
+                        else {
+
+                          contentContainer.style.display = "none";
+
+                          let matchId = divConatinerforEle.value;
+                          scoreDetails(matchId)
+
+                        }
+
+                      })
+
+                      let countryName = document.createElement("p");
+                      countryName.textContent = i.tournament.category.name + "  ." + i.tournament.slug;
+                      countryName.style.fontSize = "14px";
+                      divConatinerforEle.appendChild(countryName);
+
+                      let divEleforAwayteamScoreAndName = document.createElement("div");
+                      divEleforAwayteamScoreAndName.style.display = "flex";
+                      divEleforAwayteamScoreAndName.style.flexDirection = "row";
+                      divEleforAwayteamScoreAndName.style.justifyContent = "space-between";
+                      divConatinerforEle.appendChild(divEleforAwayteamScoreAndName);
+
+                      let awayTeamName = document.createElement("p");
+                      awayTeamName.textContent = i.awayTeam.name;
+                      awayTeamName.style.fontSize = "14px";
+                      divEleforAwayteamScoreAndName.appendChild(awayTeamName);
+
+                      let awayTeamScore = document.createElement("p");
+                      awayTeamScore.textContent = (Object.entries(i.awayScore)).length === 3 ? i.awayScore.innings.inning1.score + "/" + i.awayScore.innings.inning1.wickets + "  " + "(" + i.awayScore.innings.inning1.overs + ")" : "";
+                      awayTeamScore.style.fontSize = "14px";
+                      divEleforAwayteamScoreAndName.appendChild(awayTeamScore);
+
+                      let divEleforHometeamScoreAndName = document.createElement("div");
+                      divEleforHometeamScoreAndName.style.display = "flex";
+                      divEleforHometeamScoreAndName.style.flexDirection = "row";
+                      divEleforHometeamScoreAndName.style.justifyContent = "space-between";
+                      divConatinerforEle.appendChild(divEleforHometeamScoreAndName);
+
+
+
+                      let homeTeamName = document.createElement("p");
+                      homeTeamName.textContent = i.homeTeam.name;
+                      homeTeamName.style.fontSize = "14px";
+                      divEleforHometeamScoreAndName.appendChild(homeTeamName);
+
+                      let homeTeamScore = document.createElement("p");
+                      homeTeamScore.textContent = (Object.entries(i.homeScore)).length === 3 ? i.homeScore.innings.inning1.score + "/" + i.homeScore.innings.inning1.wickets + "  " + "(" + i.homeScore.innings.inning1.overs + ")" : "";
+                      homeTeamScore.style.fontSize = "14px";
+                      divEleforHometeamScoreAndName.appendChild(homeTeamScore);
+
+                      let resultEle = document.createElement("p");
+                      resultEle.textContent = i.note;
+                      resultEle.style.fontSize = "14px";
+                      divConatinerforEle.appendChild(resultEle);
+
+
+                    }
+
+                  })
+              }
+
+
+
+
+            });
+
+            weekRow.appendChild(dayCell);
+            date++;
+          }
+        }
+
+        tbody.appendChild(weekRow);
+      }
+
+      table.appendChild(tbody);
+      calendar.appendChild(table);
+    }
+
+    generateMonth(year, month);
+  }
+
+  generateCalendar();
+
+  // function createCalendar(elem, year, month){
+
+  //   ClanderEle.appendChild(elem,year,month)
+  // }
+
+
+
+  // createCalendar(elem, year, month)
+
+
+  let year = new Date().getFullYear();
+  let month = new Date().getMonth();
+  let date = new Date().getDate();
+
+
+
+  if (month < 9) {
+    month = month + 1;
+    month = "0" + month;
+  } else {
+    month = month + 1;
+  }
+
+  let prevday = date - 1;
+
+  let presentday = year + "-" + month + "-" + date;
+  let prevDate = year + "-" + month + "-" + prevday;
+
+
+
+
+
+
+  function noteStartedMatches(matchIdEventData) {
+
+    const urleventData = `https://os-sports-perform.p.rapidapi.com/v1/events/data?event_id=${matchIdEventData}`;
+    fetch(urleventData, options)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+
+
+
+        let scoreDetailsCardContainerEle = document.createElement("div");
+        ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+
+        let divEleForTeamScore = document.createElement("div");
+        divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+        divEleForTeamScore.style.height = "120px";
+        divEleForTeamScore.style.width = "93.5%";
+        divEleForTeamScore.style.margin = "3%";
+        divEleForTeamScore.style.padding = "5px";
+        divEleForTeamScore.style.color = "white";
+        divEleForTeamScore.style.fontSize = "14px";
+        divEleForTeamScore.style.borderRadius = "8px";
+        scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+        let divEleAlignEle = document.createElement("div");
+        divEleAlignEle.style.display = "flex";
+        divEleAlignEle.style.flexDirection = "row";
+        divEleAlignEle.style.justifyContent = "space-between";
+        divEleForTeamScore.appendChild(divEleAlignEle);
+
+        let AwayTeamNameEle = document.createElement("p");
+        AwayTeamNameEle.textContent = data.data.awayTeam.name;
+        divEleAlignEle.appendChild(AwayTeamNameEle);
+
+        let AwayTeamScorEle = document.createElement("p");
+        AwayTeamScorEle.textContent = (Object.entries(data.data.awayScore)).length === 3 ? data.data.awayScore.innings.inning1.score + "/" + data.data.awayScore.innings.inning1.wickets + "  " + "(" + data.data.awayScore.innings.inning1.overs + ")" : "";
+        divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+        let divEleAlignEle2 = document.createElement("div");
+        divEleAlignEle2.style.display = "flex";
+        divEleAlignEle2.style.flexDirection = "row";
+        divEleAlignEle2.style.justifyContent = "space-between";
+        divEleForTeamScore.appendChild(divEleAlignEle2);
+
+        let HomeTeamNameEle = document.createElement("p");
+        HomeTeamNameEle.textContent = data.data.homeTeam.name;
+        divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+        let HomeTeamScorEle = document.createElement("p");
+        HomeTeamScorEle.textContent = (Object.entries(data.data.homeScore)).length === 3 ? data.data.homeScore.innings.inning1.score + "/" + data.data.homeScore.innings.inning1.wickets + "  " + "(" + data.data.homeScore.innings.inning1.overs + ")" : "";
+        divEleAlignEle2.appendChild(HomeTeamScorEle);
+
+        let winnerEle = document.createElement("p");
+        winnerEle.textContent = data.data.note;
+        divEleForTeamScore.appendChild(winnerEle);
+
+        let divcardContainerForSummary = document.createElement("div");
+        divcardContainerForSummary.style.backgroundColor = "rgb(24,24,24)";
+        divcardContainerForSummary.style.height = "150px";
+        divcardContainerForSummary.style.width = "93.5%";
+        divcardContainerForSummary.style.margin = "3%";
+        divcardContainerForSummary.style.padding = "5px";
+        divcardContainerForSummary.style.color = "white";
+        divcardContainerForSummary.style.fontSize = "14px";
+        divcardContainerForSummary.style.borderRadius = "8px";
+        scoreDetailsCardContainerEle.appendChild(divcardContainerForSummary);
+
+
+        let tossWinEle = document.createElement("p");
+        tossWinEle.textContent = "toss win By  : " + data.data.tossWin === undefined ? "" : data.data.tossWin;
+        divcardContainerForSummary.appendChild(tossWinEle);
+
+        let venueEle = document.createElement("p");
+        venueEle.textContent = "City : " + data.data.venue.city.name + "," + data.data.venue.country.name;
+        divcardContainerForSummary.appendChild(venueEle);
+
+        let stadium = document.createElement("p");
+        stadium.textContent = "Stadium : " + data.data.venue.stadium.name;
+        divcardContainerForSummary.appendChild(stadium);
+
+
+        let playerOftheMatchInnings = document.createElement("p");
+        playerOftheMatchInnings.textContent = "Man of the Match  : " + data.data.manOfMatch.name;
+        divcardContainerForSummary.appendChild(playerOftheMatchInnings);
+
+
+
+
+
+      })
+
+  }
+
+  function FineshedMatchesFunc(matchId) {
+
+    const urleventData = `https://os-sports-perform.p.rapidapi.com/v1/events/innings?event_id=${matchId}`;
+    fetch(urleventData, options)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (jsonData) {
+        console.log(jsonData)
+        let scoreDetailsCardContainerEle = document.createElement("div");
+        ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+
+
+        let divEleForTeamScore = document.createElement("div");
+        divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+        divEleForTeamScore.style.height = "100px";
+        divEleForTeamScore.style.width = "93.5%";
+        divEleForTeamScore.style.margin = "3%";
+        divEleForTeamScore.style.padding = "5px";
+        divEleForTeamScore.style.borderRadius = "8px";
+        scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+        let divEleAlignEle = document.createElement("div");
+        divEleAlignEle.style.display = "flex";
+        divEleAlignEle.style.flexDirection = "row";
+        divEleAlignEle.style.justifyContent = "space-between";
+        divEleAlignEle.style.color = "white";
+        divEleForTeamScore.appendChild(divEleAlignEle);
+
+        let AwayTeamNameEle = document.createElement("p");
+        AwayTeamNameEle.textContent = jsonData.data[0].battingTeam.name;
+        divEleAlignEle.appendChild(AwayTeamNameEle);
+
+        let AwayTeamScorEle = document.createElement("p");
+        AwayTeamScorEle.textContent = jsonData.data[0].score + "/" + jsonData.data[0].wickets + "  " + jsonData.data[0].overs;
+        divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+        let divEleAlignEle2 = document.createElement("div");
+        divEleAlignEle2.style.display = "flex";
+        divEleAlignEle2.style.flexDirection = "row";
+        divEleAlignEle2.style.color = "white";
+        divEleAlignEle2.style.justifyContent = "space-between";
+        divEleForTeamScore.appendChild(divEleAlignEle2);
+
+        let HomeTeamNameEle = document.createElement("p");
+        HomeTeamNameEle.textContent = jsonData.data[0].bowlingTeam.name;
+        divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+        let HomeTeamScorEle = document.createElement("p");
+        HomeTeamScorEle.textContent = jsonData.data[1].score + "/" + jsonData.data[1].wickets + "  " + jsonData.data[1].overs;
+        divEleAlignEle2.appendChild(HomeTeamScorEle);
+
+
+        let BattingEle = document.createElement("p");
+        BattingEle.textContent = "Batting Team";
+        BattingEle.style.color = "white";
+        BattingEle.style.textAlign = "center";
+        scoreDetailsCardContainerEle.appendChild(BattingEle);
+
+
+
+        let tableDivContainer = document.createElement("table");
+        tableDivContainer.style.width = "100%";
+        scoreDetailsCardContainerEle.appendChild(tableDivContainer);
+
+        let tableHead = document.createElement("thead");
+        tableDivContainer.appendChild(tableHead)
+
+        let trEle1 = document.createElement("tr");
+        trEle1.style.color = "white";
+        tableHead.appendChild(trEle1);
+
+        let thEle1 = document.createElement("th");
+        thEle1.textContent = "Batters";
+        trEle1.appendChild(thEle1);
+
+        let thEle2 = document.createElement("th");
+        thEle2.textContent = "R";
+        trEle1.appendChild(thEle2);
+
+        let thEle3 = document.createElement("th");
+        thEle3.textContent = "B";
+        trEle1.appendChild(thEle3);
+
+        let thEle4 = document.createElement("th");
+        thEle4.textContent = "4s";
+        trEle1.appendChild(thEle4);
+
+        let thEle5 = document.createElement("th");
+        thEle5.textContent = "6s";
+        trEle1.appendChild(thEle5);
+
+
+
+        let batsMensTbody = document.createElement("tbody");
+        tableDivContainer.appendChild(batsMensTbody);
+
+
+
+        let teamBowlerContainer = document.createElement("div")
+        teamBowlerContainer.style.marginTop = "40px";
+        teamBowlerContainer.classList.add("team_summary")
+        scoreDetailsCardContainerEle.appendChild(teamBowlerContainer)
+
+        let bowlerLabelEle = document.createElement("label");
+        bowlerLabelEle.textContent = "Bowling Team";
+        bowlerLabelEle.style.textAlign = "center";
+        bowlerLabelEle.style.color = "white";
+        scoreDetailsCardContainerEle.appendChild(bowlerLabelEle);
+
+
+        let BowlertableDivContainer = document.createElement("table");
+        BowlertableDivContainer.style.width = "100%";
+        scoreDetailsCardContainerEle.appendChild(BowlertableDivContainer);
+
+        let bowlerTableHead = document.createElement("thead")
+        BowlertableDivContainer.appendChild(bowlerTableHead)
+
+
+        let bowlerTableBody = document.createElement("tbody")
+        BowlertableDivContainer.appendChild(bowlerTableBody)
+
+
+
+        let BowlertrEle1 = document.createElement("tr");
+        BowlertrEle1.style.color = "white";
+        bowlerTableHead.appendChild(BowlertrEle1);
+
+        let BowlerthEle1 = document.createElement("th");
+        BowlerthEle1.textContent = "Bowlers";
+        BowlertrEle1.appendChild(BowlerthEle1);
+
+        let BowlerthEle2 = document.createElement("th");
+        BowlerthEle2.textContent = "O";
+        BowlertrEle1.appendChild(BowlerthEle2);
+
+        let BowlerthEle3 = document.createElement("th");
+        BowlerthEle3.textContent = "M";
+        BowlertrEle1.appendChild(BowlerthEle3);
+
+        let BowlerthEle4 = document.createElement("th");
+        BowlerthEle4.textContent = "R";
+        BowlertrEle1.appendChild(BowlerthEle4);
+
+        let BowlerthEle5 = document.createElement("th");
+        BowlerthEle5.textContent = "W";
+        BowlertrEle1.appendChild(BowlerthEle5);
+
+
+
+
+        let battingTeamArray = jsonData.data[1].battingLine;
+
+
+        for (let j of battingTeamArray) {
+          if (j.wicketTypeName !== "Did not bat") {
+
+
+
+            let trEle2 = document.createElement("tr");
+            trEle2.style.color = "white"
+            batsMensTbody.appendChild(trEle2)
+
+
+            let tdBatsmenName1 = document.createElement("td")
+            tdBatsmenName1.textContent = j.playerName + "*";
+            trEle2.appendChild(tdBatsmenName1)
+
+            let tdBatsmenRuns1 = document.createElement("td")
+            tdBatsmenRuns1.textContent = j.score;
+            trEle2.appendChild(tdBatsmenRuns1);
+
+
+            let tdBatsmenBalls1 = document.createElement("td")
+            tdBatsmenBalls1.textContent = j.balls;
+            trEle2.appendChild(tdBatsmenBalls1);
+
+
+            let tdBatsmenFours1 = document.createElement("td")
+            tdBatsmenFours1.textContent = j.s4;
+            trEle2.appendChild(tdBatsmenFours1);
+
+
+            let tdBatsmenSixes1 = document.createElement("td")
+            tdBatsmenSixes1.textContent = j.s6;
+            trEle2.appendChild(tdBatsmenSixes1);
+
+          }
+
+
+        }
+
+        let bowingTeamArray = jsonData.data[1].bowlingLine;
+
+        for (let k of bowingTeamArray) {
+
+          let bowlertrEle2 = document.createElement("tr");
+          bowlertrEle2.style.color = "white";
+          bowlerTableBody.appendChild(bowlertrEle2);
+
+          let bowlerName1 = document.createElement("td");
+          bowlerName1.textContent = k.player.name;
+          bowlertrEle2.appendChild(bowlerName1);
+
+          let bowlerOneOvers = document.createElement("td");
+          bowlerOneOvers.textContent = k.over;
+          bowlertrEle2.appendChild(bowlerOneOvers);
+
+
+          let bowlerOneMedianOvers = document.createElement("td");
+          bowlerOneMedianOvers.textContent = k.maiden;
+          bowlertrEle2.appendChild(bowlerOneMedianOvers);
+
+          let bowlerOneRuns = document.createElement("td");
+          bowlerOneRuns.textContent = k.run;
+          bowlertrEle2.appendChild(bowlerOneRuns);
+
+          let bowlerOneWickets = document.createElement("td");
+          bowlerOneWickets.textContent = k.wicket;
+          bowlertrEle2.appendChild(bowlerOneWickets);
+
+        }
+
+      })
+
+
+
+
+  }
+
+
+
+  function ScoreDetailsShowing(jsonData) {
+
+    // console.log(jsonData)
+
+    if ((jsonData.data).length === 1) {
+
+      let scoreDetailsCardContainerEle = document.createElement("div");
+      ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+
+
+
+
+      let divEleForTeamScore = document.createElement("div");
+      divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+      divEleForTeamScore.style.height = "100px";
+      divEleForTeamScore.style.width = "93.5%";
+      divEleForTeamScore.style.margin = "3%";
+      divEleForTeamScore.style.padding = "5px";
+      divEleForTeamScore.style.borderRadius = "8px";
+      scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+      let divEleAlignEle = document.createElement("div");
+      divEleAlignEle.style.display = "flex";
+      divEleAlignEle.style.flexDirection = "row";
+      divEleAlignEle.style.justifyContent = "space-between";
+
+      divEleForTeamScore.appendChild(divEleAlignEle);
+
+      let AwayTeamNameEle = document.createElement("p");
+      AwayTeamNameEle.style.color = "white";
+      AwayTeamNameEle.textContent = jsonData.data[0].battingTeam.name;
+      divEleAlignEle.appendChild(AwayTeamNameEle);
+
+      let AwayTeamScorEle = document.createElement("p");
+      AwayTeamScorEle.style.color = "white";
+      AwayTeamScorEle.textContent = jsonData.data[0].score + "/" + jsonData.data[0].wickets + "  " + jsonData.data[0].overs;
+      divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+      let divEleAlignEle2 = document.createElement("div");
+      divEleAlignEle2.style.display = "flex";
+      divEleAlignEle2.style.flexDirection = "row";
+      divEleAlignEle2.style.justifyContent = "space-between";
+      divEleAlignEle2.style.color = "white";
+      divEleForTeamScore.appendChild(divEleAlignEle2);
+
+      let HomeTeamNameEle = document.createElement("p");
+      HomeTeamNameEle.style.color = "white";
+      HomeTeamNameEle.textContent = jsonData.data[0].bowlingTeam.name;
+      divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+
+      let BattingEle = document.createElement("p");
+      BattingEle.textContent = "Batting Team";
+      BattingEle.style.color = "white";
+      BattingEle.style.textAlign = "center";
+      scoreDetailsCardContainerEle.appendChild(BattingEle);
+
+
+      let tableDivContainer = document.createElement("table");
+      tableDivContainer.style.width = "100%";
+      scoreDetailsCardContainerEle.appendChild(tableDivContainer);
+
+      let tableHead = document.createElement("thead");
+      tableDivContainer.appendChild(tableHead)
+
+      let trEle1 = document.createElement("tr");
+      trEle1.style.color = "white";
+      tableHead.appendChild(trEle1);
+
+      let thEle1 = document.createElement("th");
+      thEle1.textContent = "Batters";
+      trEle1.appendChild(thEle1);
+
+      let thEle2 = document.createElement("th");
+      thEle2.textContent = "R";
+      trEle1.appendChild(thEle2);
+
+      let thEle3 = document.createElement("th");
+      thEle3.textContent = "B";
+      trEle1.appendChild(thEle3);
+
+      let thEle4 = document.createElement("th");
+      thEle4.textContent = "4s";
+      trEle1.appendChild(thEle4);
+
+      let thEle5 = document.createElement("th");
+      thEle5.textContent = "6s";
+      trEle1.appendChild(thEle5);
+
+
+      let batsMensTbody = document.createElement("tbody");
+      tableDivContainer.appendChild(batsMensTbody);
+
+
+
+      let teamBowlerContainer = document.createElement("div")
+      teamBowlerContainer.style.marginTop = "40px";
+      teamBowlerContainer.classList.add("team_summary")
+      scoreDetailsCardContainerEle.appendChild(teamBowlerContainer)
+
+      let bowlerLabelEle = document.createElement("label");
+      bowlerLabelEle.textContent = "Bowling Team";
+      bowlerLabelEle.style.textAlign = "center";
+      bowlerLabelEle.style.color = "white";
+      scoreDetailsCardContainerEle.appendChild(bowlerLabelEle);
+
+
+      let BowlertableDivContainer = document.createElement("table");
+      BowlertableDivContainer.style.width = "100%";
+      scoreDetailsCardContainerEle.appendChild(BowlertableDivContainer);
+
+      let bowlerTableHead = document.createElement("thead")
+      BowlertableDivContainer.appendChild(bowlerTableHead)
+
+
+      let bowlerTableBody = document.createElement("tbody")
+      BowlertableDivContainer.appendChild(bowlerTableBody)
+
+
+
+      let BowlertrEle1 = document.createElement("tr");
+      BowlertrEle1.style.color = "white";
+      bowlerTableHead.appendChild(BowlertrEle1);
+
+      let BowlerthEle1 = document.createElement("th");
+      BowlerthEle1.textContent = "Bowlers";
+      BowlertrEle1.appendChild(BowlerthEle1);
+
+      let BowlerthEle2 = document.createElement("th");
+      BowlerthEle2.textContent = "O";
+      BowlertrEle1.appendChild(BowlerthEle2);
+
+      let BowlerthEle3 = document.createElement("th");
+      BowlerthEle3.textContent = "M";
+      BowlertrEle1.appendChild(BowlerthEle3);
+
+      let BowlerthEle4 = document.createElement("th");
+      BowlerthEle4.textContent = "R";
+      BowlertrEle1.appendChild(BowlerthEle4);
+
+      let BowlerthEle5 = document.createElement("th");
+      BowlerthEle5.textContent = "W";
+      BowlertrEle1.appendChild(BowlerthEle5);
+
+
+
+
+      let battingTeamArray = jsonData.data[0].battingLine;
+
+
+      for (let j of battingTeamArray) {
+        if (j.wicketTypeName === "Batting") {
+
+
+
+          let trEle2 = document.createElement("tr");
+          trEle2.style.color = "white"
+          batsMensTbody.appendChild(trEle2)
+
+
+          let tdBatsmenName1 = document.createElement("td")
+          tdBatsmenName1.textContent = j.playerName + "*";
+          trEle2.appendChild(tdBatsmenName1)
+
+          let tdBatsmenRuns1 = document.createElement("td")
+          tdBatsmenRuns1.textContent = j.score;
+          trEle2.appendChild(tdBatsmenRuns1);
+
+
+          let tdBatsmenBalls1 = document.createElement("td")
+          tdBatsmenBalls1.textContent = j.balls;
+          trEle2.appendChild(tdBatsmenBalls1);
+
+
+          let tdBatsmenFours1 = document.createElement("td")
+          tdBatsmenFours1.textContent = j.s4;
+          trEle2.appendChild(tdBatsmenFours1);
+
+
+          let tdBatsmenSixes1 = document.createElement("td")
+          tdBatsmenSixes1.textContent = j.s6;
+          trEle2.appendChild(tdBatsmenSixes1);
+
+
+        }
+
+
+      }
+
+      let bowingTeamArray = jsonData.data[0].bowlingLine;
+
+      for (let k of bowingTeamArray) {
+
+        let bowlertrEle2 = document.createElement("tr");
+        bowlertrEle2.style.color = "white";
+        bowlerTableBody.appendChild(bowlertrEle2);
+
+        let bowlerName1 = document.createElement("td");
+        bowlerName1.textContent = k.player.name;
+        bowlertrEle2.appendChild(bowlerName1);
+
+        let bowlerOneOvers = document.createElement("td");
+        bowlerOneOvers.textContent = k.over;
+        bowlertrEle2.appendChild(bowlerOneOvers);
+
+
+        let bowlerOneMedianOvers = document.createElement("td");
+        bowlerOneMedianOvers.textContent = k.maiden;
+        bowlertrEle2.appendChild(bowlerOneMedianOvers);
+
+        let bowlerOneRuns = document.createElement("td");
+        bowlerOneRuns.textContent = k.run;
+        bowlertrEle2.appendChild(bowlerOneRuns);
+
+        let bowlerOneWickets = document.createElement("td");
+        bowlerOneWickets.textContent = k.wicket;
+        bowlertrEle2.appendChild(bowlerOneWickets);
+
+
+
+
+      }
+
+    } else {
+
+      let scoreDetailsCardContainerEle = document.createElement("div");
+      ScoreDetailsContainerEle.appendChild(scoreDetailsCardContainerEle);
+
+
+
+      let divEleForTeamScore = document.createElement("div");
+      divEleForTeamScore.style.backgroundColor = "rgb(24,24,24)";
+      divEleForTeamScore.style.height = "100px";
+      divEleForTeamScore.style.width = "93.5%";
+      divEleForTeamScore.style.margin = "3%";
+      divEleForTeamScore.style.padding = "5px";
+      divEleForTeamScore.style.borderRadius = "8px";
+      scoreDetailsCardContainerEle.appendChild(divEleForTeamScore);
+
+      let divEleAlignEle = document.createElement("div");
+      divEleAlignEle.style.display = "flex";
+      divEleAlignEle.style.flexDirection = "row";
+      divEleAlignEle.style.justifyContent = "space-between";
+      divEleAlignEle.style.color = "white";
+      divEleForTeamScore.appendChild(divEleAlignEle);
+
+      let AwayTeamNameEle = document.createElement("p");
+      AwayTeamNameEle.textContent = jsonData.data[0].battingTeam.name;
+      divEleAlignEle.appendChild(AwayTeamNameEle);
+
+      let AwayTeamScorEle = document.createElement("p");
+      AwayTeamScorEle.textContent = jsonData.data[0].score + "/" + jsonData.data[0].wickets + "  " + jsonData.data[0].overs;
+      divEleAlignEle.appendChild(AwayTeamScorEle);
+
+
+      let divEleAlignEle2 = document.createElement("div");
+      divEleAlignEle2.style.display = "flex";
+      divEleAlignEle2.style.flexDirection = "row";
+      divEleAlignEle2.style.color = "white";
+      divEleAlignEle2.style.justifyContent = "space-between";
+      divEleForTeamScore.appendChild(divEleAlignEle2);
+
+      let HomeTeamNameEle = document.createElement("p");
+      HomeTeamNameEle.textContent = jsonData.data[1].bowlingTeam.name;
+      divEleAlignEle2.appendChild(HomeTeamNameEle);
+
+      let HomeTeamScorEle = document.createElement("p");
+      HomeTeamScorEle.textContent = jsonData.data[1].score + "/" + jsonData.data[1].wickets + "  " + jsonData.data[1].overs;
+      divEleAlignEle2.appendChild(HomeTeamScorEle);
+
+
+      let BattingEle = document.createElement("p");
+      BattingEle.textContent = "Batting Team";
+      BattingEle.style.color = "white";
+      BattingEle.style.textAlign = "center";
+      scoreDetailsCardContainerEle.appendChild(BattingEle);
+
+
+
+      let tableDivContainer = document.createElement("table");
+      tableDivContainer.style.width = "100%";
+      scoreDetailsCardContainerEle.appendChild(tableDivContainer);
+
+      let tableHead = document.createElement("thead");
+      tableDivContainer.appendChild(tableHead)
+
+      let trEle1 = document.createElement("tr");
+      trEle1.style.color = "white";
+      tableHead.appendChild(trEle1);
+
+      let thEle1 = document.createElement("th");
+      thEle1.textContent = "Batters";
+      trEle1.appendChild(thEle1);
+
+      let thEle2 = document.createElement("th");
+      thEle2.textContent = "R";
+      trEle1.appendChild(thEle2);
+
+      let thEle3 = document.createElement("th");
+      thEle3.textContent = "B";
+      trEle1.appendChild(thEle3);
+
+      let thEle4 = document.createElement("th");
+      thEle4.textContent = "4s";
+      trEle1.appendChild(thEle4);
+
+      let thEle5 = document.createElement("th");
+      thEle5.textContent = "6s";
+      trEle1.appendChild(thEle5);
+
+
+
+      let batsMensTbody = document.createElement("tbody");
+      tableDivContainer.appendChild(batsMensTbody);
+
+
+
+      let teamBowlerContainer = document.createElement("div")
+      teamBowlerContainer.style.marginTop = "40px";
+      teamBowlerContainer.classList.add("team_summary")
+      scoreDetailsCardContainerEle.appendChild(teamBowlerContainer)
+
+      let bowlerLabelEle = document.createElement("label");
+      bowlerLabelEle.textContent = "Bowling Team";
+      bowlerLabelEle.style.textAlign = "center";
+      bowlerLabelEle.style.color = "white";
+      scoreDetailsCardContainerEle.appendChild(bowlerLabelEle);
+
+
+      let BowlertableDivContainer = document.createElement("table");
+      BowlertableDivContainer.style.width = "100%";
+      scoreDetailsCardContainerEle.appendChild(BowlertableDivContainer);
+
+      let bowlerTableHead = document.createElement("thead")
+      BowlertableDivContainer.appendChild(bowlerTableHead)
+
+
+      let bowlerTableBody = document.createElement("tbody")
+      BowlertableDivContainer.appendChild(bowlerTableBody)
+
+
+
+      let BowlertrEle1 = document.createElement("tr");
+      BowlertrEle1.style.color = "white";
+      bowlerTableHead.appendChild(BowlertrEle1);
+
+      let BowlerthEle1 = document.createElement("th");
+      BowlerthEle1.textContent = "Bowlers";
+      BowlertrEle1.appendChild(BowlerthEle1);
+
+      let BowlerthEle2 = document.createElement("th");
+      BowlerthEle2.textContent = "O";
+      BowlertrEle1.appendChild(BowlerthEle2);
+
+      let BowlerthEle3 = document.createElement("th");
+      BowlerthEle3.textContent = "M";
+      BowlertrEle1.appendChild(BowlerthEle3);
+
+      let BowlerthEle4 = document.createElement("th");
+      BowlerthEle4.textContent = "R";
+      BowlertrEle1.appendChild(BowlerthEle4);
+
+      let BowlerthEle5 = document.createElement("th");
+      BowlerthEle5.textContent = "W";
+      BowlertrEle1.appendChild(BowlerthEle5);
+
+
+
+
+      let battingTeamArray = jsonData.data[0].battingLine;
+
+
+      for (let j of battingTeamArray) {
+        if (j.wicketTypeName === "Batting") {
+
+
+
+          let trEle2 = document.createElement("tr");
+          trEle2.style.color = "white"
+          batsMensTbody.appendChild(trEle2)
+
+
+          let tdBatsmenName1 = document.createElement("td")
+          tdBatsmenName1.textContent = j.playerName + "*";
+          trEle2.appendChild(tdBatsmenName1)
+
+          let tdBatsmenRuns1 = document.createElement("td")
+          tdBatsmenRuns1.textContent = j.score;
+          trEle2.appendChild(tdBatsmenRuns1);
+
+
+          let tdBatsmenBalls1 = document.createElement("td")
+          tdBatsmenBalls1.textContent = j.balls;
+          trEle2.appendChild(tdBatsmenBalls1);
+
+
+          let tdBatsmenFours1 = document.createElement("td")
+          tdBatsmenFours1.textContent = j.s4;
+          trEle2.appendChild(tdBatsmenFours1);
+
+
+          let tdBatsmenSixes1 = document.createElement("td")
+          tdBatsmenSixes1.textContent = j.s6;
+          trEle2.appendChild(tdBatsmenSixes1);
+
+        }
+
+
+      }
+
+      let bowingTeamArray = jsonData.data[0].bowlingLine;
+
+      for (let k of bowingTeamArray) {
+
+        let bowlertrEle2 = document.createElement("tr");
+        bowlertrEle2.style.color = "white";
+        bowlerTableBody.appendChild(bowlertrEle2);
+
+        let bowlerName1 = document.createElement("td");
+        bowlerName1.textContent = k.player.name;
+        bowlertrEle2.appendChild(bowlerName1);
+
+        let bowlerOneOvers = document.createElement("td");
+        bowlerOneOvers.textContent = k.over;
+        bowlertrEle2.appendChild(bowlerOneOvers);
+
+
+        let bowlerOneMedianOvers = document.createElement("td");
+        bowlerOneMedianOvers.textContent = k.maiden;
+        bowlertrEle2.appendChild(bowlerOneMedianOvers);
+
+        let bowlerOneRuns = document.createElement("td");
+        bowlerOneRuns.textContent = k.run;
+        bowlertrEle2.appendChild(bowlerOneRuns);
+
+        let bowlerOneWickets = document.createElement("td");
+        bowlerOneWickets.textContent = k.wicket;
+        bowlertrEle2.appendChild(bowlerOneWickets);
+
+      }
+
+    }
+
+  }
+
+
+
+
+  function scoreDetails(matchId) {
+
+    const url = `https://os-sports-perform.p.rapidapi.com/v1/events/innings?event_id=${matchId}`;
+    fetch(url, options)
+      .then(function (response) {
+        if (response.status === 200) {
+          return response.json();
+        } else {
+          return ""
+        }
+
+      })
+      .then(function (jsonData) {
+        ScoreDetailsShowing(jsonData)
+      })
+  }
+
+
+
+  function todayLiveMatches(todayMatches) {
+
+    // i.awayScore.innings.inning1.score+i.awayScore.innings.inning1.wickets+i.awayScore.innings.inning1.overs;
+    for (let i of todayMatches) {
+
+
+      let divcardContainer = document.createElement("div");
+      cricketBgMainContainerEle.appendChild(divcardContainer);
+
+      let divConatinerforEle = document.createElement("div");
+      divConatinerforEle.style.backgroundColor = "rgb(24,24,24)";
+      divConatinerforEle.style.width = "97%";
+      divConatinerforEle.value = i.id;
+      divConatinerforEle.style.margin = "5px";
+      divConatinerforEle.style.color = "white";
+      divConatinerforEle.style.borderRadius = "10px";
+      divConatinerforEle.style.padding = "8px";
+      divConatinerforEle.style.height = "cover";
+      divcardContainer.appendChild(divConatinerforEle);
+      divConatinerforEle.addEventListener("click", function (event) {
+        event.preventDefault();
+        cricketBgMainContainerEle.remove();
+        if (i.status.type === 'notstarted') {
+          let matchIdEventData = divConatinerforEle.value;
+          // console.log("not", matchIdEventData);
+          noteStartedMatches(matchIdEventData)
+
+        } else if (i.status.type === 'finished' || i.status.type === "willcontinue") {
+          FineshedMatchesFunc(divConatinerforEle.value)
+        }
+        else {
+
+          let matchId = divConatinerforEle.value;
+          scoreDetails(matchId)
+
+        }
+
+      })
+
+      let countryName = document.createElement("p");
+      countryName.textContent = i.tournament.category.name + "  ." + i.tournament.slug;
+      countryName.style.fontSize = "14px";
+      divConatinerforEle.appendChild(countryName);
+
+      let divEleforAwayteamScoreAndName = document.createElement("div");
+      divEleforAwayteamScoreAndName.style.display = "flex";
+      divEleforAwayteamScoreAndName.style.flexDirection = "row";
+      divEleforAwayteamScoreAndName.style.justifyContent = "space-between";
+      divConatinerforEle.appendChild(divEleforAwayteamScoreAndName);
+
+      let awayTeamName = document.createElement("p");
+      awayTeamName.textContent = i.awayTeam.name;
+      awayTeamName.style.fontSize = "14px";
+      divEleforAwayteamScoreAndName.appendChild(awayTeamName);
+
+      let awayTeamScore = document.createElement("p");
+      awayTeamScore.textContent = (Object.entries(i.awayScore)).length === 3 ? i.awayScore.innings.inning1.score + "/" + i.awayScore.innings.inning1.wickets + "  " + "(" + i.awayScore.innings.inning1.overs + ")" : "";
+      awayTeamScore.style.fontSize = "14px";
+      divEleforAwayteamScoreAndName.appendChild(awayTeamScore);
+
+      let divEleforHometeamScoreAndName = document.createElement("div");
+      divEleforHometeamScoreAndName.style.display = "flex";
+      divEleforHometeamScoreAndName.style.flexDirection = "row";
+      divEleforHometeamScoreAndName.style.justifyContent = "space-between";
+      divConatinerforEle.appendChild(divEleforHometeamScoreAndName);
+
+
+
+      let homeTeamName = document.createElement("p");
+      homeTeamName.textContent = i.homeTeam.name;
+      homeTeamName.style.fontSize = "14px";
+      divEleforHometeamScoreAndName.appendChild(homeTeamName);
+
+      let homeTeamScore = document.createElement("p");
+      homeTeamScore.textContent = (Object.entries(i.homeScore)).length === 3 ? i.homeScore.innings.inning1.score + "/" + i.homeScore.innings.inning1.wickets + "  " + "(" + i.homeScore.innings.inning1.overs + ")" : "";
+      homeTeamScore.style.fontSize = "14px";
+      divEleforHometeamScoreAndName.appendChild(homeTeamScore);
+
+      let resultEle = document.createElement("p");
+      resultEle.textContent = i.note;
+      resultEle.style.fontSize = "14px";
+      divConatinerforEle.appendChild(resultEle);
+
+
+    }
+  }
+
+  const url = `https://os-sports-perform.p.rapidapi.com/v1/events/schedule/date?date=${presentday}&sport_id=62`;
+
+
+  fetch(url, options)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (jsonData) {
+      todayMatches = jsonData.data;
+      todayLiveMatches(todayMatches)
+
+    })
+
+
+</script>
+
+</html>
