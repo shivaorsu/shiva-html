@@ -8,7 +8,7 @@
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
-  <title>Badminton_live_score</title>
+  <title>Badminton Live Score</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,7 +16,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha384-...SNIPPED...8B" crossorigin="anonymous">
 
-
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
  @media (min-width: 930px) {
@@ -50,7 +52,7 @@
     .live-score-element {
       font-size: 30px;
       font-weight: 900;
-      color: black;
+      color: Black;
       font-style: oblique;
     }
     .live-logo-element {
@@ -59,7 +61,6 @@
     margin-left: 9rem;
     width: 149px;
     }
-
 
     .sports-element {
       font-size: 20px;
@@ -98,7 +99,7 @@
     }
 
     .football-ele {
-      color: black;
+      color: #aaa;
       padding: 10px;
       font-family: sans-serif;
       font-weight: 600;
@@ -128,7 +129,7 @@
       height: 300px;
       width: 300px;
       border-style: solid;
-      border-color: #191818;
+      border-color: black;
       /* margin-left: 50px; */
       border-radius: 8px;
       overflow: auto;
@@ -176,7 +177,7 @@
     font-size: 17px;
     border-bottom: 1px solid grey;
     float: left;
-    color: black;
+    color: white;
     width: 90%;
     background: none;
   }
@@ -272,12 +273,11 @@
 
   @media (max-width:930px) {
     .cricket-page-main-container {
-      background-color: #111;
+      background-color: #add8e6;
       height: cover;
       width: 100%;
       padding-bottom: 20px;
       background-size: cover;
-      background-color: #add8e6;
     }
 
     .header-container {
@@ -297,33 +297,20 @@
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      background-color: #add8e6;
 
-    }
-    .live-logo-element {
-      font-size: 30px;
-      font-weight: 900;
-      color: black;
-      font-style: oblique;
     }
 
     .live-score-element {
       font-size: 30px;
       font-weight: 900;
-      color: black;
+      color: white;
       font-size: 20px;
       text-align: center;
       font-style: italic;
-      margin-left: -6rem;
     }
     .live-logo-element {
-      /* height: 42px;
-    margin-top: 4rem;
-    margin-left: 9rem;
-    width: 149px; */
-    display: none;
+     display: none;
     }
-
 
 
     .sports-element {
@@ -346,7 +333,7 @@
     }
 
     .football-ele {
-      color: black;
+      color: white;
       padding: 10px;
       font-family: sans-serif;
       font-size: 14px;
@@ -360,7 +347,8 @@
       justify-content: center;
       margin-top: 30px;
     }
-    .calenderstyle{
+
+    .calenderstyle {
       display: none;
     }
 
@@ -427,28 +415,24 @@
 
   @media (width:768px) {
     .cricket-page-main-container {
-      background-color: #add8e6;
+      background-color: #111;
       height: cover;
       width: 100%;
       padding-bottom: 20px;
       background-size: cover;
-      background-color: #add8e6;
     }
+    .live-logo-element {
+     display: none;
+    }
+
 
     .header-container {
       padding: 20px;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      background-color: #add8e6;
     }
-    .live-logo-element {
-      /* height: 42px;
-    margin-top: 4rem;
-    margin-left: 9rem;
-    width: 149px; */
-    display: none;
-    }
+
     .header-bg-container {
       height: 50px;
       min-width: 300px;
@@ -459,18 +443,16 @@
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      background-color: #add8e6;
 
     }
 
     .live-score-element {
       font-size: 30px;
       font-weight: 900;
-      color: black;
+      color: white;
       font-size: 20px;
       text-align: center;
       font-style: italic;
-      margin-left: -6rem;
     }
 
 
@@ -486,7 +468,6 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      background-color: #add8e6;
     }
 
     .football-element {
@@ -496,7 +477,7 @@
 
 
     .football-ele {
-      color: black;
+      color: white;
       padding: 10px;
       font-family: sans-serif;
       font-size: 14px;
@@ -508,7 +489,8 @@
       flex-direction: row;
       margin-top: 30px;
     }
-    .calenderstyle{
+
+    .calenderstyle {
       display: none;
     }
 
@@ -578,12 +560,14 @@
 
   @media (max-width:300px) {
     .cricket-page-main-container {
-      background-color: #add8e6;
+      background-color: #111;
       height: cover;
       width: 100%;
       padding-bottom: 20px;
       background-size: cover;
-      background-color: #add8e6;
+    }
+    .live-logo-element {
+     display: none;
     }
 
     .header-container {
@@ -592,13 +576,7 @@
       flex-direction: row;
       justify-content: space-around;
     }
-    .live-logo-element {
-      /* height: 42px;
-    margin-top: 4rem;
-    margin-left: 9rem;
-    width: 149px; */
-    display: none;
-    }
+
     .header-bg-container {
       height: 30px;
       width: 10px;
@@ -609,19 +587,16 @@
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      background-color: #add8e6;
 
     }
 
     .live-score-element {
       font-size: 30px;
       font-weight: 900;
-      color: black;
+      color: white;
       font-size: 20px;
       text-align: center;
       font-style: italic;
-      margin-left: -6rem;
-      
     }
 
 
@@ -648,7 +623,7 @@
 
 
     .football-ele {
-      color: black;
+      color: white;
       padding: 10px;
       font-family: sans-serif;
       font-size: 10px;
@@ -662,7 +637,8 @@
       justify-content: center;
       margin-top: 30px;
     }
-    .calenderstyle{
+
+    .calenderstyle {
       display: none;
     }
 
@@ -674,7 +650,7 @@
       height: 600px;
       width: 430px;
       border-style: solid;
-      border-color: grey;
+      border-color: black;
       margin: 20px;
       border-radius: 8px;
       overflow: auto;
@@ -727,7 +703,7 @@
   }
 
   .team_summary {
-    color: black;
+    color: #fff;
     font-size: 17px;
     font-weight: 600;
     font-style: italic;
@@ -737,7 +713,7 @@
   }
 
   .team_squad {
-    color: black;
+    color: #fff;
     font-size: 26px;
     font-weight: 600;
     font-style: italic;
@@ -747,7 +723,7 @@
   }
 
   .team_members {
-    color: #aaa;
+    color: black;
     font-size: 15px;
     font-weight: 600;
     font-style: italic;
@@ -812,16 +788,9 @@
 <body>
   <div id="liveScoreAndRecentMainPage">
     <div class="cricket-page-main-container">
-
       <div>
         <div class="header-container">
-          
-
-            <a href="https://bharatsports.com/">
-              <img class="live-logo-element" src="https://bharatsports.com/wp-content/uploads/2023/01/web-logo-1.png"/>
-            </a>
-
-        
+           
           <div class="header-bg-container">
 
             <div>
@@ -830,103 +799,140 @@
 
           </div>
         </div>
-        <hr style="color: 1px solid #000000e8;">
-        </hr style="color: 1px solid #0d0d0d;">
+        <hr>
+        </hr>
 
-        <ul class="sports-container">
-          
-          <div class="football-element">
-            <a href="https://bharatsports.com/cricket-live-score">
-            <p class="football-ele">Cricket</p>
-          </a>
+        <nav class="navbar navbar-expand-lg " >
+          <div class="container-fluid" style="background-color: rgb(132, 201, 224)">
+             <img src="https://bharatsports.com/wp-content/uploads/2023/06/weblogo.png" height="40px" />
+           
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link" href="https://bharatsports.com/football-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;"><img src="https://cdn-icons-png.flaticon.com/128/33/33736.png" height="25px" />Football</a></a>
+                </li>
+
+
+                <li class="nav-item">
+                  <a class="nav-link" href="https://bharatsports.com/hockey-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;"> <img src="https://cdn-icons-png.flaticon.com/128/4598/4598599.png" height="25px" />Hockey</a>
+                </li>
+
+
+
+                <li class="nav-item">
+                  <a class="nav-link" href="https://bharatsports.com/basketball-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;"><img src="https://cdn-icons-png.flaticon.com/128/33/33838.png" height="25px" >Basketball</a>
+                </li>
+
+
+                <li class="nav-item">
+                  <a class="nav-link"  href="https://bharatsports.com/tennis-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;">  <img src="https://cdn-icons-png.flaticon.com/128/6929/6929284.png" height="25px">Tennis</a>
+                </li>
+
+
+                <li class="nav-item">
+                  <a class="nav-link"  href="https://bharatsports.com/cricket-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;"> <img src="https://cdn-icons-png.flaticon.com/128/2160/2160173.png" height="25px">Cricket</a>
+                </li>
+
+
+                <li class="nav-item">
+                  <a class="nav-link"  href="https://bharatsports.com/badminton-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;"> <img src="https://cdn-icons-png.flaticon.com/128/9573/9573805.png" height="25px">Badminton</a>
+                </li>
+
+
+
+                <li class="nav-item">
+                  <a class="nav-link"  href="https://bharatsports.com/tabletennis-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;"> <img src="https://cdn-icons-png.flaticon.com/128/1099/1099535.png" height="25px">Tabletennis</a>
+                </li>
+
+
+
+                <li class="nav-item">
+                  <a class="nav-link"  href="https://bharatsports.com/snooker-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;"> <img src="https://cdn-icons-png.flaticon.com/128/3517/3517356.png" height="25px">Snooker</a>
+                </li>
+
+
+
+                <li class="nav-item">
+                  <a class="nav-link"  href="https://bharatsports.com/volleyball-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;">  <img src="https://cdn-icons-png.flaticon.com/128/2547/2547414.png" height="25px">VolleyBall</a>
+                </li>
+
+
+                <li class="nav-item">
+                  <a class="nav-link"  href="https://bharatsports.com/baseball-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;"> <img src="https://cdn-icons-png.flaticon.com/128/1729/1729959.png" height="25px">BaseBall</a>
+                </li>
+
+
+                <li class="nav-item">
+                  <a class="nav-link"  href="https://bharatsports.com/rugby-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;"> <img src="https://cdn-icons-png.flaticon.com/128/74/74071.png" height="25px"> Rugby</a>
+                </li>
+
+
+                <li class="nav-item">
+                  <a class="nav-link"  href="https://bharatsports.com/darts-live-score" style="font-size: 14px; margin-left: 1rem;
+                  color: black;" > <img src="https://cdn-icons-png.flaticon.com/128/3138/3138297.png" height="25px">Darts</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link"  href="https://bharatsports.com/boxing-live-score" style="font-size: 14px;margin-left: 1rem;
+                  color: black;"><img src="https://cdn-icons-png.flaticon.com/128/10881/10881504.png" height="25px">MMA</a>
+                </li></a>
+                </li>
+
+
+               
+<!-- 
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                 -->
+                <!-- <li class="nav-item">
+                  <a class="nav-link disabled">Disabled</a>
+                </li>
+              </ul> -->
+              <!-- <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form> -->
+            </div>
           </div>
-
-          <div class="football-element">
-            <a href="https://bharatsports.com/football-live-score">
-              <p class="football-ele">Football</p>
-            </a>
-
-          </div>
-
-          <div class="football-element">
-            <a href="https://bharatsports.com/hockey-live-score">
-              <p class="football-ele">Hockey</p>
-            </a>
-          </div>
-
-
-          <div class="football-element">
-            <a href="https://bharatsports.com/basketball-live-score">
-              <p class="football-ele">Basketball</p>
-            </a>
-          </div>
-
-
-          <div class="football-element">
-            <a href="https://bharatsports.com/tennis-live-score">
-              <p class="football-ele">Tennis</p>
-            </a>
-          </div>
-
-
-
-          <div class="football-element">
-            <a href="https://bharatsports.com/badminton-live-score">
-              <p class="football-ele">Badminton</p>
-            </a>
-          </div>
-
-
-          <div class="football-element">
-            <a href="https://bharatsports.com/tabletennis-live-score">
-              <p class="football-ele">Tabletennis</p>
-            </a>
-          </div>
-
-          <div class="football-element">
-            <a href="https://bharatsports.com/snooker-live-score">
-              <p class="football-ele">Snooker</p>
-            </a>
-          </div>
-
-
-          <div class="football-element">
-            <a href="https://bharatsports.com/volleyball-live-score">
-              <p class="football-ele">VolleyBall</p>
-            </a>
-          </div>
-          <div class="football-element">
-            <a href="https://bharatsports.com/baseball-live-score">
-              <p class="football-ele">Baseball Ball</p>
-            </a>
-          </div>
-          <div class="football-element">
-            <a href="https://bharatsports.com/rugby-live-score">
-              <p class="football-ele">Rugby</p>
-            </a>
-          </div>
-          <div class="football-element">
-            <a href="https://bharatsports.com/drat-live-score">
-              <p class="football-ele">Drat</p>
-            </a>
-          </div>
-
-
-
-
-
-
-        </ul>
+        </nav>
         <div class="scores-matches-bg-container">
           <div class="calenderstyle">
-            <div id="calendar" style="color:black;"></div>
+            <div id="calendar" style="font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: #111;"></div>
 
-            <div class="countrys-search-container ">
+            <div class="countrys-search-container">
               <div style="margin: 2rem; margin-left: 6rem;">
                 <form id="searchForm">
-                  <input type="text" id="searchInput" placeholder="Search...">
+                  <input type="text" id="searchInput" placeholder="Search..." style="height: 40px;
+    width: 100%;
+    border-radius: 10px; background-color: rgb(132, 201, 224); color: #111; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
                 </form>
-                <div id="searchResults"></div>
+                <div id="searchResults" style="font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"></div>
                 <div id="countriesShow" style="margin-top: 2rem; color: white;">
                 </div>
 
@@ -938,34 +944,41 @@
 
 
           <div class="sports-details-main-container no-scrollbar">
-            <div class="days-container">
+            <div class="days-container" style="font-size: 14px;">
               <div>
-                <a class="live-anchor-tag" style="color: black;">Live</a>
+                <a class="live-anchor-tag" style="color: #111; background-color: rgb(132, 201, 224);">Live</a>
               </div>
 
             </div>
             <hr />
 
-            <div id="calenderCompletedMatches">
+            <div id="calenderCompletedMatches" style="font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
             </div>
 
-            <div id="cricketBgMainContainer">
+            <div id="cricketBgMainContainer" style="font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
             </div>
-            <div id="nextDayMatchesConatiner">
-              <div id="ScoreDetailsContainer">
+            <div id="nextDayMatchesConatiner" style="font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+              <div id="ScoreDetailsContainer" style="font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
               </div>
             </div>
-            <div id="nextMatchCardsContainer">
-              <div id="cards">
+
+            <div id="AwayScoreContainer" style="font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            </div>
+
+            <div id="nextMatchCardsContainer" style="font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+              <div id="cards" style="font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
               </div>
             </div>
-            <div id="filteredMatches">
+            <div id="filteredMatches" style="font-size: 14px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
             </div>
 
           </div>
         </div>
 
       </div>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 <script>
